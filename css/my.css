@@ -1,0 +1,46 @@
+#dictCntr{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+table {
+	border: 2px #666 solid;
+	width: 100%;
+	padding-bottom: 50px;
+}
+td{
+	border-top: 2px #666 solid;
+	border-bottom: 0px;
+	border-left: 0px;
+}
+
+tr{
+	border: 2px solid #f00;
+	min-height: 80px; 
+}
+tbody{
+	border: 2px solid #000;
+}
+thead{
+	border: 2px solid #123;
+}
+.nav a{
+	font-size: 10px;
+}
+.pre{
+	text-align: right;
+	min-width: 40px;
+	width: 50px;
+}
+.frWrd{
+	border-right: 2px #666 solid;
+}
+.past{
+	border-right: 2px #666 solid;
+	text-align: center;
+}
+.toWrd{
+	border-right: 2px #666 solid;
+}
+h3{
+	text-align: center;
+}

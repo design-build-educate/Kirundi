@@ -1,0 +1,106 @@
+#mnNv{
+	padding-left: 2px;
+	font-size: 14px;
+}
+#mnNv label{
+	background-color:#ddd;
+	border: 1px black solid;
+	padding: 2px;
+	cursor:pointer;
+}
+#untNv{
+	margin-top: 4px;
+	margin-bottom: 2px;
+	padding-left: 2px;
+	font-size:14px;
+}
+#untNv label{
+	background-color:#ddd;
+	border: 1px black solid;
+	margin-left: 2px;
+	cursor:pointer;
+}
+#lsnNv{
+	background-color:#999;
+	padding-left: 2px;
+	font-size: 14px;
+}
+#lsnNv label{
+	background-color:#ddd;
+	border: 1px black solid;
+	margin-left: 2px;
+	cursor:pointer;
+	float: left;
+}
+.scCnt{
+	display: none;
+}
+#untLsnNv{
+	
+}
+.lsnBtn{
+	margin-right: 2px;
+	padding: 0px 2px;
+	display: none;
+	cursor: pointer;
+	border: 1px solid #000;
+}
+.lsnCntr{
+	overflow:auto;
+}
+
+
+
+		input{
+			padding-left: 2px;
+		}
+		#bkCover{
+			position: absolute;
+			right: 0px;
+			height: 100%;
+			bottom: 0px;
+		}
+#introId{
+	width: 85px;
+}
+#lsnId{
+	width: 70px;
+}
+#rulesId{
+	width: 65px;
+}
+#vocabId{
+	width: 85px;
+}
+#indxId{
+	width: 60px;
+}
+#lsnCntrId{
+	width: 100%;
+	height: 100%;
+}
+.untNv{
+	color:red;
+	font-weight: bold;
+	font-size: 20px;
+	cursor: pointer;
+}
+#untCntr1{
+	width: 100%;
+	height: 100%;
+	background-image: url("imgs/BurGrUnt1.jpg");
+	background-repeat:no-repeat;
+	background-position-y: 100px;
+	background-size:contain;
+}
+.untCntr{
+	height: 100%;
+	width:100%;
+}
+section{
+	font-size: 28px;
+	padding: 25px;
+}
+.oList1{
+	type:A;
+}
