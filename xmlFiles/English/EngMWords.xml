@@ -1,0 +1,840 @@
+
+<r>
+	<w>	
+		<b>MACHETE</b>
+		<t>: umu-panga</t>
+	</w>
+	<w>	
+		<b>MADE</b>
+		<t>: (to be m. narrow) kw-azwa</t>
+		<t>: (to be m. poorly) gu-homba</t>
+	</w>
+	<w>	
+		<b>MAGGOT</b>
+		<t>: in-yo</t>
+	</w>
+	<w>	
+		<b>MAGIC</b>
+		<t>: ubu-mago</t>
+		<t>: ama-ngetengete</t>
+		<t>: ama-reba</t>
+		<t>: (to take out objects from body, as witch doctors supposedly do) gu-hura</t>
+	</w>
+	<w>	
+		<b>MAGICIAN</b>
+		<t>: umu-mago</t>
+	</w>
+	<w>	
+		<b>MAINTAIN</b>
+		<t>: ku-gumya</t>
+		<t>: (one's position, argue and swear that you're right) gu-tara</t>
+	</w>
+	<w>	
+		<b>MAKE</b>
+		<t>: ku-gira, ku-rema</t>
+		<t>: (afraid) gu-tera ubg-oba</t>
+		<t>: (a bed) gu-sasa</t>
+		<t>: (blunt) gu-fyita</t>
+		<t>: (bread) gu-cumba</t>
+		<t>: (clean) gu-humanura</t>
+		<t>: (clear, cause to understand) gu-tegereza</t>
+		<t>: (crokked) ku-goreka</t>
+		<t>: (effort) kw-andara</t>
+		<t>: (empty) ku-garagasa</t>
+		<t>: (equal in length or height) ku-resha</t>
+		<t>: (excuses) ku-dendekanya, ku-dendekeranya, ku-zangazanga</t>
+		<t>: (face over something that tastes bad) ku-nyinyirwa</t>
+		<t>: (a fire) gu-cana, gu-kongereza</t>
+		<t>: (firm) ku-gumya</t>
+		<t>: (fun of) ku-negura</t>
+		<t>: (fun of, esp. someone in trouble) kw-ishinyira</t>
+		<t>: (fun of, by recalling the good he has lost) gu-curira</t>
+		<t>: (good) ku-ryosha</t>
+		<t>: (hedge) ku-zitira</t>
+		<t>: (hard for one who has lost a loved one, by reproaching the dead) kwitamba ku muvyimba</t>	
+		<t>: (known) kw-andagaza, kw-angaza, kw-atura, kw-erura, ku-ranga, gu-kwiza, gu-kwiragiza, kw-amamaza, gu-hishura, gu-serura</t>
+		<t>: (laugh, one that makes others laugh) aka-gugu</t>
+		<t>: (level) gu-sena</t>
+		<t>: (narrow) kw-aza</t>	
+		<t>: (nest) kw-arika</t>
+		<t>: (noise, big) kw-asana, ku-bomborana, ku-bugiriza, gu-sama</t>
+		<t>: (oneself) kw-igira</t>	
+		<t>: (others like you) kw-ikundiriza</t>	
+		<t>: (peace) ku-banguranya</t>
+		<t>: (perfect) gu-tunganya, kw-uzuza, ku-roraniriza</t>
+		<t>: (place) ku-bisa</t>
+		<t>: (place for one another to pass) ku-bisikanya</t>
+		<t>: (reparations) gu-honga, gu-hongera</t>	
+		<t>: (restitution) ku-riha</t>
+		<t>: (sacrifice) gu-shikana</t>	
+		<t>: (sign) ku-gereraniriza</t>
+		<t>: (smooth) gu-sena</t>
+		<t>: (straight) ku-gorora, ku-roranya</t>	
+		<t>: (tired) ku-rusha</t>
+		<t>: (vow) gu-shinga</t>
+		<t>: (watering place) ku-gomer</t>	
+		<t>:  (white) kw-eza</t>	
+	</w>
+	<w>
+		<b>MALARIA</b>
+		<t>: iny-onko</t>
+	</w>
+	<w>	
+		<b>MALE</b>
+		<t>: i-zinamuhungu</t>
+		<t>: (animal, esp. goat) im-pfizi, im-fizi</t>
+	</w>
+	<w>	
+		<b>MALICE</b>
+		<t>: (person with no) iki-rende</t>
+	</w>
+	<w>	
+		<b>MAN</b>
+		<t>: umu-gabo</t>
+		<t>: (of influence) umu-shingantahe</t>
+		<t>: (old) umu-tama</t>
+		<t>: (young, unmarried) umu-sore</t>
+	</w>
+	<w>	
+		<b>MANGO</b>
+		<t>: umw-embe</t>
+	</w>
+	<w>	
+		<b>MANHOOD</b>
+		<t>: ubu-gabo</t>
+	</w>
+	<w>	
+		<b>MANIOC</b>
+		<t>: umw-umbati</t>
+	</w>
+	<w>	
+		<b>MANNER</b>
+		<t>: ubu-ryo</t>
+	</w>
+	<w>	
+		<b>MANURE</b>
+		<t>: ama-se</t>
+		<t>: (goat) ama-henehene</t>
+		<t>: (heap) i-cukiro</t>
+		<t>: (a lot) ibi-se</t>
+		<t>: (to gather for garden) ku-vumbura</t>
+	</w>
+	<w>	
+		<b>MANY</b>
+		<t>: -inshi</t>
+		<t>: (how many?) -ngahe?</t>
+		<t>: (so many) -ngaho</t>
+		<t>: (to be many) ku-rundana</t>
+		<t>: (to be, esp. cows, trees) gu-sagara</t>
+		<t>: (to be so) ku-ngana</t>
+	</w>
+	<w>	
+		<b>MARCH</b>
+		<t>: ukwezi kwa gatatu</t>
+		<t>: Ntwarante</t>
+	</w>
+	<w>	
+		<b>MARK</b>
+		<t>: (made by hoe or axe) i-bango</t>
+		<t>: (of a blow) umu-ramu</t>
+		<t>: (to mark) ku-doma</t>
+		<t>: (to have marks, scratches, as pot) gu-saragurika</t>
+		<t>: ("get on the mark") gu-tuna</t>
+	</w>
+	<w>	
+		<b>MARKET PLACE</b>
+		<t>: aka-guriro</t>
+		<t>: i-soko</t>
+	</w>
+	<w>	
+		<b>MARRIAGE</b>
+		<t>: (wedding) ubu-kwe</t>
+		<t>: (go-between for) umu-reshi</t>
+		<t>: (to act as go-between) ku-resha</t>
+		<t>: (to be accompanied to, as bride is) gu-shingirwa</t>
+		<t>: (to be attendant for) gu-shingira</t>
+		<t>: (to be paid for, for m.) gu-kobga</t>
+		<t>: (to go to a wedding feast) gu-taha ubu-kwe</t>
+		<t>: (to take marriage vows) ku-ragana</t>
+	</w>
+	<w>	
+		<b>MARRIAGEABLE AGE</b>
+		<t>: ubu-kumi</t>
+	</w>
+	<w>	
+		<b>MARRIED</b>
+		<t>: (to be, of woman) kw-abirwa, ku-rongorwa</t>
+	</w>
+	<w>	
+		<b>MARROW</b>
+		<t>: (in bone) umu-sokoro</t>
+	</w>
+	<w>	
+		<b>MARRY</b>
+		<t>: (each other) kw-abirana, ku-rongorana, ku-ragana</t>
+		<t>: (of bride) kw-abirwa, ku-rongorwa</t>
+		<t>: (of groom) kw-abira, kw-enda, ku-rongora</t>
+		<t>: (a widow and go to her kraal) gu-cura</t>
+		<t>: (to refuse, esp. girl to refuse to marry a certain man) ku-benga</t>
+		<t>: (to take wife without marrying her properly) gu-cikiza</t>
+		<t>: (to go to husband without being married) gu-cikira</t>
+	</w>
+	<w>	
+		<b>MARSH</b>
+		<t>: iki-digi</t>
+	</w>
+	<w>	
+		<b>MARVEL</b>
+		<t>: gu-tangara</t>
+		<t>: (marvel over) ku-rangarira</t>
+	</w>
+	<w>	
+		<b>MASHED</b>
+		<t>: (to be completely from being stepped on) gu-fyonyoka</t>
+	</w>
+	<w>	
+		<b>MASSACRE</b>
+		<t>: ku-geseza</t>
+	</w>
+	<w>	
+		<b>MASSAGE</b>
+		<t>: gu-siga</t>
+		<t>: (a bump so it doesn't swell or hurt) ku-nyingisha</t>
+	</w>
+	<w>	
+		<b>MASTER, MR.</b>
+		<t>: Bgana (Sw.)</t>
+		<t>: umu-kama</t>
+		<t>: nyene</t>
+		<t>: (my, our) databuja</t>
+		<t>: (your) shobuja</t>
+		<t>: (his, her, their) shebuja</t>
+		<t>: (of an art) umu-hinga</t>
+		<t>: (to be) ku-gaba</t>
+	</w>
+	<w>	
+		<b>MAT</b>
+		<t>: (grass mat to sit on) umu-sezero</t>
+		<t>: (made of split papyrus) iki-gara, iki-nyambuga</t>
+		<t>: (sleeping) iki-rago</t>
+		<t>: (small) umu-keka</t>
+		<t>: (very nice, used by king or chief) in-dava</t>
+		<t>: (worn-out) umu-sambi</t>
+	</w>
+	<w>	
+		<b>MATCHES</b>
+		<t>: (box of) iki-biriti</t>
+	</w>
+	<w>	
+		<b>MATERIALS</b>
+		<t>: (for building house) i-humbi</t>
+		<t>: (to cut trees for building, to gather building materials) gu-humbira</t>
+	</w>
+	<w>	
+		<b>MATTER</b>
+		<t>: (in the eyes) ibi-karagashi</t>
+	</w>
+	<w>	
+		<b>MAY</b>
+		<t>: ukwezi kwa gatanu</t>
+		<t>: Rusama</t>
+		<t>: (month of heavy rains) uru-shana</t>
+	</w>
+	<w>	
+		<b>MAYBE</b>
+		<t>: kumbure</t>
+		<t>: nkeka</t>
+		<t>: kur'ubu</t>
+	</w>
+	<w>	
+		<b>MAZE</b>
+		<t>: (of horns) inka zishashe amahembe</t>
+	</w>
+	<w>	
+		<b>ME</b>
+		<t>: jewe</t>
+		<t>: (and me) nanje</t>
+		<t>: (like me) nkanje</t>
+	</w>
+	<w>	
+		<b>MEAN</b>
+		<t>: (to be mean to) gu-hama</t>
+		<t>: (to say mean things in trying to provoke another) kw-iyandagaza</t>
+	</w>
+	<w>	
+		<b>MEANNESS</b>
+		<t>: ubu-jora</t>
+		<t>: (of one who rules others) i-tuntu</t>
+	</w>
+	<w>	
+		<b>MEASURE</b>
+		<t>: in-gero</t>
+		<t>: uru-gero</t>
+		<t>: uru-gezo</t>
+		<t>: (by hand or by steps) i-tambge</t>
+		<t>: (of work) iki-vi</t>
+		<t>: (to measure) ku-gera, ku-gerera, gu-pima</t>
+		<t>: (to measure a fixed time) ku-gerereza</t>
+	</w>
+	<w>	
+		<b>MEASURELESS</b>
+		<t>: aka-burarugero</t>
+	</w>
+	<w>	
+		<b>MEAT</b>
+		<t>: iny-ama</t>
+		<t>: (dried) umu-ranzi</t>
+		<t>: (fat) ibi-nure</t>
+		<t>: (to slip down on spear -if it slips it's supposed to be diseased) gu-shoka</t>
+	</w>
+	<w>	
+		<b>MEDICINE</b>
+		<t>: umu-ti</t>
+		<t>: (to make one talk freely, to releas inhibitions) uru-dedemvya</t>
+		<t>: (to make people like one) uru-sango</t>
+		<t>: (material smeared about kraal to keep away thieves and evil spirits) uru-gombeka, uru-rembeko</t>
+		<t>: (to ask for m. to counteract poison) ku-rogoza</t>
+		<t>: (to put out "medicine" to keep away thieves and spirits) gu-tota, ku-rembeka, ku-gombeka</t>
+	</w>
+	<w>	
+		<b>MEEK</b>
+		<t>: (person) umu-gwaneza</t>
+		<t>: (to be) gu-tekereza</t>
+	</w>
+	<w>	
+		<b>MEEKNESS</b>
+		<t>: ubu-gwaneza</t>
+	</w>
+	<w>	
+		<b>MEET</b>
+		<t>: gu-hamvya</t>
+		<t>: gu-hwana</t>
+		<t>: gu-hura</t>
+		<t>: (to go to) gu-sanganira, gu-tegera</t>
+		<t>: (together) gu-korana, gu-terana</t>
+		<t>: (to cause to m. together) gu-koranya, gu-teranya</t>
+	</w>
+	<w>	
+		<b>MEETING</b>
+		<t>: igi-korane</t>
+		<t>: igi-koraniro</t>
+		<t>: i-teraniro</t>
+		<t>: (place) i-huriro</t>
+	</w>
+	<w>	
+		<b>MELANCHOLY</b>
+		<t>: ic-ira</t>
+	</w>
+	<w>	
+		<b>MELT</b>
+		<t>: gu-cika</t>
+		<t>: gu-shonga</t>
+		<t>: ku-yaga</t>
+		<t>: (away) ku-yongayonga</t>
+		<t>: (to cause to) ku-yagiriza</t>
+		<t>: (sugar, salt) ku-yonga</t>
+	</w>
+	<w>	
+		<b>MEMBER</b>
+		<t>: (of chief's council who listens to trials) umu-nyekombe</t>
+		<t>: (of family) aba-vandimwe</t>
+	</w>
+	<w>	
+		<b>MEMORY</b>
+		<t>: (word that remains in heart causing sorrow or anger) isata burenge</t>
+		<t>: (to escape the) ku-zinda</t>
+	</w>
+	<w>	
+		<b>MENINGITIS</b>
+		<t>: umu-giga</t>
+	</w>
+	<w>	
+		<b>MENOPAUSE</b>
+		<t>: (to reach) gu-ca</t>
+		<t>: (to have reached) ku-jabuka</t>
+	</w>
+	<w>	
+		<b>MENSTRUAL PERIOD</b>
+		<t>: (to have finished) ku-jabuka</t>
+	</w>
+	<w>	
+		<b>MERCHANDISE</b>
+		<t>: igi-shorano</t>
+	</w>
+	<w>	
+		<b>MERCHANT</b>
+		<t>: umu-hanjuzi</t>
+		<t>: umu-nyebahasha</t>
+		<t>: umu-dandazi</t>
+	</w>
+	<w>	
+		<b>MERCIFUL PERSON</b>
+		<t>: umu-nyembabazi</t>
+	</w>
+	<w>	
+		<b>MERCY</b>
+		<t>: im-babazi</t>
+		<t>: iki-gongwe</t>
+		<t>: (fear to harm another because you love him) im-puhwe</t>
+	</w>
+	<w>	
+		<b>MERELY</b>
+		<t>: -sa</t>
+		<t>: gusa</t>
+	</w>
+	<w>	
+		<b>MERIT</b>
+		<t>: ku-berwa</t>
+		<t>: gu-kwira</t>
+	</w>
+	<w>	
+		<b>MESSAGE</b>
+		<t>: ubu-tumwa</t>
+		<t>: (to send) gu-tuma</t>
+	</w>
+	<w>	
+		<b>MESSENGER</b>
+		<t>: umu-tumwa</t>
+		<t>: in-tumwa</t>
+	</w>
+	<w>	
+		<b>METAL</b>
+		<t>: ic-uma</t>
+		<t>: (foot piece on spear) umu-hunda</t>
+		<t>: (ore) ubu-tare</t>
+		<t>: (piece placed on stones over fire to set pot on) iki-njanja</t>
+		<t>: (sheet of, for roof) i-bati</t>
+	</w>
+	<w>	
+		<b>METAL WORKER</b>
+		<t>: umu-cuzi</t>
+	</w>
+	<w>	
+		<b>MIDDLE</b>
+		<t>: ama-cambga</t>
+		<t>: (in the middle) hagati</t>
+		<t>: (in the middle, of day) ama-shoka</t>
+		<t>: (in the middle of lake, river) i-damba, umu-tanga</t>
+		<t>: of lake, sea, jungle) i-gezi</t>
+		<t>: (to go down the m. of path or country) kw-atira</t>
+	</w>
+	<w>	
+		<b>MIDNIGHT</b>
+		<t>: igi-cugu</t>
+	</w>
+	<w>	
+		<b>MIDST</b>
+		<t>: (in the m. of) hagati, ama-cambga</t>
+	</w>
+	<w>	
+		<b>MILD</b>
+		<t>: (to be) gu-tekereza</t>
+	</w>
+	<w>	
+		<b>MILDEW</b>
+		<t>: i-fira</t>
+		<t>: (to get) gu-tunda</t>
+	</w>
+	<w>	
+		<b>MILK</b>
+		<t>: ama-ta</t>
+		<t>: (human) ama-berebere</t>
+		<t>: (buttermilk) ama-terere</t>
+		<t>: (given to sick) umw-erera</t>
+		<t>: (sour) uru-bu</t>
+		<t>: (containers, table or shelf for) uru-himbi</t>
+		<t>: (cup) ic-ansi</t>
+		<t>: (to milk) gu-kama</t>
+		<t>: (to finish milking a cow) gu-haza</t>
+		<t>: (to have dirt in m.) gu-tobeka</t>
+		<t>: (to m. into mouth) ku-goba</t>
+		<t>: (to pour milk-down another's throat) ku-ramiza</t>
+		<t>: (to put skin of dead calf before cow so she will give milk) kw-orokera</t>
+		<t>: (to remove a foreign body from) gu-tosora</t>
+		<t>: (to sour, curdle) ku-vura</t>
+	</w>
+	<w>	
+		<b>MILKMAN</b>
+		<t>: umu-kamyi</t>
+	</w>
+	<w>	
+		<b>MILL-STONE</b>
+		<t>: uru-syo</t>
+		<t>: i-rtyazo</t>
+	</w>
+	<w>	
+		<b>MILLET</b>
+		<t>: ubu-ro</t>
+		<t>: (one head) uru-ro</t>
+		<t>: (harvest of) i-genya, i-gesa</t>
+		<t>: (harvester) umu-genyi</t>
+		<t>: (to harvest) ku-genya, ku-gesa</t>
+	</w>
+	<w>	
+		<b>MINCE</b>
+		<t>: (along) ku-nyonyera</t>
+	</w>
+	<w>	
+		<b>MINE</b>
+		<t>: (mineral) inganzo</t>
+	</w>
+	<w>	
+		<b>MINISTER</b>
+		<t>: umu-suku</t>
+	</w>
+	<w>	
+		<b>MIRACLE</b>
+		<t>: igi-tangaza</t>
+		<t>: ak-umiza</t>
+		<t>: (not by God's power) ama-reba</t>
+		<t>: (making others think you've done a miracle when it's only a deception) ubu-ryi</t>
+	</w>
+	<w>	
+		<b>MIRROR</b>
+		<t>: ic-irori</t>
+		<t>: ic-irore</t>
+		<t>: i-rore</t>
+	</w>
+	<w>	
+		<b>MISDEED</b>
+		<t>: umu-ziro</t>
+	</w>
+	<w>	
+		<b>MISERABLE PERSON</b>
+		<t>: umu-gorwa</t>
+	</w>
+	<w>	
+		<b>MISLEAD</b>
+		<t>: ku-yobeza</t>
+	</w>
+	<w>	
+		<b>MISS</b>
+		<t>: gu-siba</t>
+		<t>: (aim and) gu-shusha</t>
+		<t>: (each other on path) ku-nyuranwa</t>
+		<t>: (fail to find) ku-bura</t>
+		<t>: (pass by but not meet) gu-hubana</t>
+	</w>
+	<w>	
+		<b>MISSPEAK</b>
+		<t>: (err in speaking) ku-yoba</t>
+		<t>: ("excuse me, I said a wrong word, misspoke myself") bambe</t>
+	</w>
+	<w>	
+		<b>MIST</b>
+		<t>: urw-irungu</t>
+		<t>: igi-pfungu</t>
+		<t>: (to mist) ku-nyanyaga</t>
+	</w>
+	<w>	
+		<b>MISTAKE</b>
+		<t>: i-kosha</t>
+		<t>: i-kosa (Sw.)</t>
+		<t>: i-futi</t>
+		<t>: (to make a, in counting or speaking) ku-yoba</t>
+	</w>
+	<w>	
+		<b>MISTAKEN</b>
+		<t>: (to be) gu-huba, ku-yoberwa, gu-kosha (Sw.)</t>
+	</w>
+	<w>	
+		<b>MISTER</b>
+		<t>: Bgana</t>
+	</w>
+	<w>	
+		<b>MISTREAT</b>
+		<t>: gu-hahaza</t>
+		<t>: gu-hama</t>
+		<t>: gu-sinda</t>
+	</w>
+	<w>	
+		<b>MISTRESS</b>
+		<t>: mabuja (my)</t>
+		<t>: (your) nyobuja</t>
+	</w>
+	<w>	
+		<b>MISTRUST</b>
+		<t>: i-kekwe</t>
+		<t>: (to m.) kw-ikenga, gu-keba</t>
+		<t>: (each other) gu-hinyurana</t>
+	</w>
+	<w>	
+		<b>MISUNDERSTANDS</b>
+		<t>: (one who deliberately) iki-dambidambi</t>
+	</w>
+	<w>	
+		<b>MIX</b>
+		<t>: (vt.) gu-teranya, ku-vanga, ku-vangavanga, ku-vurunga</t>
+		<t>: (dough) gu-cumba</t>
+		<t>: (things up and pack them down together) gu-kanjagura</t>
+		<t>: (thoroughly) gu-cucuma</t>
+		<t>: (together) gu-sukiranya</t>
+		<t>: (up) ku-zikuruka</t>
+		<t>: (up thoroughly) gu-sobanganya</t>
+	</w>
+	<w>	
+		<b>MIXTURE</b>
+		<t>: iki-vange</t>
+	</w>
+	<w>	
+		<b>MOCK</b>
+		<t>: gu-shinyira</t>
+	</w>
+	<w>	
+		<b>MOCKED</b>
+		<t>: (to be easily) gu-teteka, gu-teterwa</t>
+	</w>
+	<w>	
+		<b>MOLD</b>
+		<t>: i-fira</t>
+		<t>: (on food) umu-fyira</t>
+	</w>
+	<w>	
+		<b>MOLDY</b>
+		<t>: (to become; esp. manioc or grass) ku-vunda</t>
+	</w>
+	<w>	
+		<b>MOLE</b>
+		<t>: (animal) i-fuku</t>
+		<t>: (on skin) i-sununu</t>
+	</w>
+	<w>	
+		<b>MOMENT</b>
+		<t>: ama-ngo</t>
+		<t>: iki-bariro</t>
+		<t>: (of finishing or attaining something) iki-ringo</t>
+		<t>: (to wait the right) gu-hengera</t>
+	</w>
+	<w>	
+		<b>MONARCH</b>
+		<t>: umu-kama</t>
+	</w>
+	<w>	
+		<b>MONEY</b>
+		<t>: i-hera (from German heller)</t>
+		<t>: (to change) ku-vunja</t>
+	</w>
+	<w>	
+		<b>MONGOOSE</b>
+		<t>: i-sambge</t>
+	</w>
+	<w>	
+		<b>MONKEY</b>
+		<t>: in-kende</t>
+		<t>: (large) i-mamfu</t>
+	</w>
+	<w>	
+		<b>MONTH</b>
+		<t>: ukw-ezi</t>
+		<t>: January: ukezi kwa mbere, Nzero</t>
+		<t>: February: ukwezi kwa kabiri, Nyamagoma, Ruhuhuma</t>
+		<t>: March: ukwezi kwa gatatu, Ntwarante</t>
+		<t>: April: ukwezi kwa kane, Ndamukiza, Kabozambuba</t>
+		<t>: May: ukwezi kwa gatanu, Rusama</t>
+		<t>: June: ukwezi kwa gatandatu Rwirabura, Kiyumpu</t>
+		<t>: July: ukwezi kwa ndwi, Mukakaro</t>
+		<t>: August: ukwezi kwa munani, Myandagaro</t>
+		<t>: September: ukwezi kwa cenda, Nyakanga</t>
+		<t>: October: ukwezi kwa cumi, Gitugutu</t>
+		<t>: November: ukwezi kwa cumi na rimwe, Munyonyo</t>
+		<t>: December: ukwezi kwa cumi na kabiri, Kigarama</t>
+	</w>
+	<w>	
+		<b>MOO</b>
+		<t>: ku-rabira</t>
+	</w>
+	<w>	
+		<b>MOOD</b>
+		<t>: (gram.) umu-vugire</t>
+	</w>
+	<w>	
+		<b>MOON</b>
+		<t>: ukw-ezi</t>
+		<t>: (name of) Nzero</t>
+		<t>: (to wane) gu-tuba</t>
+		<t>: (to wax) gu-tubuka</t>
+	</w>
+	<w>	
+		<b>MORE</b>
+		<t>: -ndi</t>
+		<t>: (to be) gu-saga, gu-saguka</t>
+		<t>: (to do even) ku-rushiriza</t>
+	</w>
+	<w>	
+		<b>MOREOVER</b>
+		<t>: bitayeko</t>
+		<t>: iki-geretseko</t>
+		<t>: uteko</t>
+	</w>
+	<w>	
+		<b>MORNING</b>
+		<t>: igi-tondo</t>
+		<t>: (early) aga-tondo</t>
+		<t>: (early, just before dawn) aga-huru</t>
+		<t>: (good morning!) bgakeye</t>
+	</w>
+	<w>	
+		<b>MORTAR</b>
+		<t>: (for grinding) i-sekuro</t>
+		<t>: (pestle for) umu-sekuzo</t>
+		<t>: (to grind or shell in wooden mortar) gu-sekura</t>
+	</w>
+	<w>	
+		<b>MOSQUITO</b>
+		<t>: umu-bu</t>
+	</w>
+	<w>	
+		<b>MOTH</b>
+		<t>: iki-nyugunyugu</t>
+	</w>
+	<w>	
+		<b>MOTHER</b>
+		<t>: (dearly loved) mama w'umukondo</t>
+		<t>: (my, our) mama, mawe</t>
+		<t>: (your) nyoko</t>
+		<t>: (his, her, their) nyina</t>
+	</w>
+	<w>	
+		<b>MOTHER-IN-LAW</b>
+		<t>: (my) mabukwe</t>
+		<t>: (your) nyokobukwe</t>
+		<t>: (his, her, their) inabukwe</t>
+	</w>
+	<w>	
+		<b>MOULD</b>
+		<t>: (bricks, pottery) ku-bumba, gu-fyatura</t>
+	</w>
+	<w>	
+		<b>MOUNTAIN</b>
+		<t>: wnu-sozi</t>
+		<t>: (foot of) umu-camo</t>
+		<t>: (peak) im-pinga</t>
+	</w>
+	<w>	
+		<b>MOURNING</b>
+		<t>: ama-borogo</t>
+	</w>
+	<w>	
+		<b>MOUSE</b>
+		<t>: im-beba</t>
+	</w>
+	<w>	
+		<b>MOUTH</b>
+		<t>: aka-nwa</t>
+		<t>: (big, many) ama-nwa</t>
+		<t>: (person whose mouth is very dry) umw-unwa</t>
+		<t>: (to burn in, smart in) gu-kera</t>
+		<t>: (to cover the mouth of another with hand to keep him from making a sound) gu-pfunda</t>
+		<t>: (to open) gu-teranura umunwa kw-asama</t>
+		<t>: (to put in the m. of) gu-tamika</t>
+		<t>: (to rinse the) kw-iyugunyura, kw-inyugunura</t>
+	</w>
+	<w>	
+		<b>MOUTHFUL</b>
+		<t>: (to take a) gu-tamira</t>
+	</w>
+	<w>	
+		<b>MOVE</b>
+		<t>: (vi.) kw-imuka</t>
+		<t>: (vt.) kw-imura</t>
+		<t>: (about) gu-tembera (Sw.)</t>
+		<t>: (things to another place) gu-tunda, gu-tereka</t>
+		<t>: (to another chieftanship) gu-cikira</t>
+		<t>: (to a new location) ku-jonjora</t>
+		<t>: (to cause to move) gu-segenyesha</t>
+	</w>
+	<w>	
+		<b>MUCH</b>
+		<t>: cane</t>
+		<t>: -inshi</t>
+		<t>: (very much) rwose</t>
+		<t>: (to be too much) gu-caguka</t>
+	</w>
+	<w>	
+		<b>MUD</b>
+		<t>: ivy-ondo</t>
+		<t>: ubu-rongo</t>
+		<t>: urw-ondo</t>
+		<t>: (black) uru-shanga</t>
+		<t>: (to be stuck in) gu-shaya</t>
+		<t>: (to get out of) gu-shayuka</t>
+		<t>: (to pull out of) gu-shayura</t>
+	</w>
+	<w>	
+		<b>MUDDY</b>
+		<t>: (deep m. place) i-shayo</t>
+		<t>: (to be) gu-shaya</t>
+	</w>
+	<w>	
+		<b>MULTIPLICAND</b>
+		<t>: in-gwizwa</t>
+	</w>
+	<w>	
+		<b>MULTIPLIER</b>
+		<t>: in-gwiza</t>
+	</w>
+	<w>	
+		<b>MULTIPLY</b>
+		<t>: (vi.) ku-gwira, gu-sagara</t>
+		<t>: (vt.) ku-gwiza, gu-cimbataza, kw-ungura</t>
+		<t>: (because of having fed well, cows) ku-gisha</t>
+		<t>: (rapidly, as insects) ku-jagata</t>
+		<t>: (rapidly) ku-rondoka</t>
+		<t>: (as seeds, cows, etc, ) ku-rondora</t>
+	</w>
+	<w>	
+		<b>MULTITUDE</b>
+		<t>: in-teko</t>
+		<t>: i-shengero</t>
+	</w>
+	<w>	
+		<b>MUMPS</b>
+		<t>: ama-sambambgika</t>
+	</w>
+	<w>	
+		<b>MURDER</b>
+		<t>: ubg-icanyi</t>
+	</w>
+	<w>	
+		<b>MURDERER</b>
+		<t>: umw-icanyi</t>
+	</w>
+	<w>	
+		<b>MUSCLE</b>
+		<t>: iny-ama</t>
+		<t>: umu-soso</t>
+		<t>: umu-tsi</t>
+		<t>: (to be sore in) ku-nywaguka</t>
+	</w>
+	<w>	
+		<b>MUSHROOM</b>
+		<t>: igi-hepfo</t>
+		<t>: igi-hefu</t>
+	</w>
+	<w>	
+		<b>MUSICAL</b>
+		<t>: (instrument, esp. harp) i-nanga</t>
+		<t>: (with string) aga-hugugu</t>
+		<t>: (to play) gu-curaranga, ku-vuza</t>
+	</w>
+	<w>	
+		<b>MUST</b>
+		<t>: (to have to) ku-rinda, -kwiye</t>
+	</w>
+	<w>	
+		<b>MUSTY</b>
+		<t>: (to get) gu-tunda</t>
+	</w>
+	<w>	
+		<b>MUTTERING</b>
+		<t>: umw-idodombo</t>
+	</w>
+	<w>	
+		<b>MY</b>
+		<t>: -anje</t>
+	</w>
+	<w>	
+		<b>MYSTERY</b>
+		<t>: i-banga</t>
+	</w>
+</r>
