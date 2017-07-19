@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Vocabulary</title>
+	<script>
+		var prsUlDsp = "A";
+		function getWrdsByLtr(evt){
+			$("#introP").css({"display":"none"});
+			var newUl = evt.target.id.charAt(0);
+			var oldUl = prsUlDsp;
+			$("#"+oldUl).css({"display":"none"});
+			$("#"+newUl).css({"display":"block"});
+			$("#"+oldUl+"ltr").css({"fontWeight":"normal","backgroundColor":"#ddd"});
+			$("#"+newUl+"ltr").css({"fontWeight":"bold","backgroundColor":"#aaa"});
+			prsUlDsp = newUl;
+		};// end fct getWrdsByLtr
+	</script>
+	<style>
+		#vocabNvId{
+			width: 100%;
+		}
+		.ltrLbl{
+			border: 1px solid black;
+			margin-left: 1px;
+			margin-top: 3px;
+			background-color: #ddd;
+		}
+		.ltrUl{
+			display:none;
+		}
+		#A{
+			display: block;
+		}
+		#Altr{
+			border: 1px solid black;
+			margin-left: 1px;
+			margin-top: 3px;
+			background-color: #aaa;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+			<nav id="vocabNvId">
+				<label id="Altr" onclick="getWrdsByLtr(event)">A</label>
+				<label id="Bltr" class="ltrLbl" onclick="getWrdsByLtr(event)">B</label>
+				<label id="Cltr" class="ltrLbl" onclick="getWrdsByLtr(event)">C</label>
+				<label id="Dltr" class="ltrLbl" onclick="getWrdsByLtr(event)">D</label>
+				<label id="Eltr" class="ltrLbl" onclick="getWrdsByLtr(event)">E</label>
+				<label id="Fltr" class="ltrLbl" onclick="getWrdsByLtr(event)">F</label>
+				<label id="Gltr" class="ltrLbl" onclick="getWrdsByLtr(event)">G</label>
+				<label id="Hltr" class="ltrLbl" onclick="getWrdsByLtr(event)">H</label>
+				<label id="Iltr" class="ltrLbl" onclick="getWrdsByLtr(event)">I</label>
+				<label id="Jltr" class="ltrLbl" onclick="getWrdsByLtr(event)">J</label>
+				<label id="Kltr" class="ltrLbl" onclick="getWrdsByLtr(event)">K</label>
+				<label id="Mltr" class="ltrLbl" onclick="getWrdsByLtr(event)">M</label>
+				<label id="Nltr" class="ltrLbl" onclick="getWrdsByLtr(event)">N</label>
+				<label id="Oltr" class="ltrLbl" onclick="getWrdsByLtr(event)">O</label>
+				<label id="Pltr" class="ltrLbl" onclick="getWrdsByLtr(event)">P</label>
+				<label id="Rltr" class="ltrLbl" onclick="getWrdsByLtr(event)">R</label>
+				<label id="Sltr" class="ltrLbl" onclick="getWrdsByLtr(event)">S</label>
+				<label id="Tltr" class="ltrLbl" onclick="getWrdsByLtr(event)">T</label>
+				<label id="Ultr" class="ltrLbl" onclick="getWrdsByLtr(event)">U</label>
+				<label id="Vltr" class="ltrLbl" onclick="getWrdsByLtr(event)">V</label>
+				<label id="Wltr" class="ltrLbl" onclick="getWrdsByLtr(event)">W</label>
+				<label id="Yltr" class="ltrLbl" onclick="getWrdsByLtr(event)">Y</label>
+				<label id="Zltr" class="ltrLbl" onclick="getWrdsByLtr(event)">Z</label>
+			</nav>
+		<section id="introP" class="section">
+			<h2><u>VOCABULARY</u></h2>
+			<p>This vocabulary is not a dictionary, but only a collection of 1000 of the commonest words in Kirundi. 
+				Words are alphabetized according to the stem. Prefixes of nouns and infinitives will be separated by 
+				a hyphen. Plurals of nouns will only be given where it is irregular or where the class of the word 
+				is not self-evident. In finding words it will be necessary to remember the rules of consonant changes 
+				which take place. For example, "Indwara" will be found in the r's, not the d's; many words with p will 
+				be found under h; words with a vowel beginning and having the in- prefix may have a y or z, but will be
+			    found under the vowel. The abbreviations tr. and int. stand for transitive and intransitive verbs. 
+			    Sw. means Kiswahili.
+			</p>
+		</section>
+		<section>
+			<ul id="A">A
+				<li>kw-abira (ye) -- to receive, reach out for</li>
+				<li>ic-abona -- witness</li>
+				<li>in-aga -- clay cooking pot</li>
+				<li>umw-agazi -- lamb, kid</li>
+				<li>ivy-ago -- troubles</li>
+				<li>aha, aho -- here, there</li>
+				<li>ic-aha -- sin</li>
+				<li>ukw-aha -- armpit</li>
+				<li>kw-aka (tse ) -- to shine</li>
+				<li>umw-aka -- year, long period of time</li>
+				<li>kw-akira (ye ) -- to receive</li> 
+				<li>kw-ama (mye) -- to bear fruit, to always do</li>
+				<li>kw-ambara (ye) -- to wear, to put on (garment), to dress</li>
+				<li>umw-ambuzi -- thief, robber</li> 
+				<li>ubg-ami -- kingdom</li>
+				<li>umw-ami -- king, lord</li>
+				<li>urw-amo -- noise (of voices), clatter</li>
+				<li>umw-ampi -- arrow</li>
+				<li>kw-amura (ye) -- togather (fruit, vegetables)</li>
+				<li>ubg-ana -- childhood</li>
+				<li>umw-ana -- child</li>
+				<li>in-anasi (Sw.) -- pineapple</li>
+				<li>umw-anda -- dirt, as on floor, etc.</li>
+				<li>kw-andika (tse) -- to write</li>
+				<li>umw-andu -- inheritance</li>
+				<li>kw-anikira (ye) -- to put out in sun</li>
+				<li>kw-anka (nse) -- to refuse, hate</li>
+				<li>urw-anko -- hatred</li>
+				<li>umw-ansi -- enemy</li>
+				<li>kw-anura (ye ) -- to bring in from sun</li>
+				<li>umw-anya -- time, space, place, room</li>
+				<li>urw-ara -- finger-nail, toe-nail</li>
+				<li>ic-ari -- nest</li> 
+				<li>ariko -- but</li>
+				<li>kw-asama (mye) -- to open the mouth</li>
+				<li>ubg-ato -- boat</li>
+				<li>kw-atsa (kije) -- to blow the fire</li>
+				<li>ivy-atsi -- grass (ivyatsi bibi - weeds)</li>
+				<li>ubg-atsi -- grass (esp. tall grass), field</li>
+				<li>kw-atura (ye) -- to come into the light, e.g. come out of a hole</li>
+				<li>ic-ayi (Sw.) -- tea</li>
+	 		</ul>
+			<ul id="B" class="ltrUl">B
+				<li>ku-ba (ye) -- to be, become, live (in certain place)</li>
+				<li>ku-babara (ye) -- to suffer, be sad, sorry</li>
+				<li>ku-babarira (ye) -- to excuse, forgive</li>
+				<li>umu-babaro -- suffering, grief, sadness</li>
+				<li>im-babazi -- mercy, forgiveness</li>
+				<li>i-babi -- leaf (sometimes ikibabi)</li>
+				<li>ku-baga (ze) -- to slaughter, butcher</li>
+				<li>ku-bagara (ye) -- to weed out (esp, by hand)</li>
+				<li>uru-baho -- board, slate</li>
+				<li>ku-bamba (vye) -- to stretch out, as skin, to crucify</li>
+				<li>bambe -- excuse me (I misspoke myself)</li>
+				<li>i-bamfu -- left hand or side (or, ububamfu)</li>
+				<li>ku-bandanya (nije) -- to hurry</li>
+				<li>umu-banyi -- neighbor</li>
+				<li>ku-banza (je) -- to begin by, to do first</li>
+				<li>uru-banza -- trial, judgment, condemnation</li>
+				<li>im-baragasa -- flea</li>
+				<li>ku-barira (ye) -- to tell</li>
+				<li>ku-bar&#299;ra (riye) -- to sew</li>
+				<li>ku-basha (shije) -- to have power, be able (physically)</li>
+				<li>ubu-basha -- power, strength</li>
+				<li>ku-batiza (jije) -- to baptize</li>
+				<li>ku-baza (jije) -- to ask (question)</li>
+				<li>kub&#257;za (je) --to plane, do wood carving</li>
+				<li>im-beba -- mouse, rat</li>
+				<li>1m-beho -- cold (atmosphere)</li>
+				<li>imi-bembe -- leprosy</li> 
+				<li>bene -- like (prep.)</li>
+				<li>im-bere -- in front of, before, inside</li>
+				<li>ku-besha (she) -- to lie, tell falsehood</li>
+				<li>iki-bezi --axe</li>
+				<li>im-bga -- dog</li> 
+				<li>bgakeye -- good morning</li>
+				<li>ku-bgira (ye) -- to tell</li>
+				<li>ku-bgiriza (je) -- to command, order</li>
+				<li>-bi -- bad, dirty, ugly</li>
+				<li>ku-biba (vye) -- to plant (small seeds)</li>
+				<li>ku-bika (tse) -- to put away</li>
+				<li>imi-bimba -- green beans</li>
+				<li>ku-bira (ze) -- to boil (tr.)</li>
+				<li>-biri -- two</li>
+				<li>umu-biri -- body, flesh</li>
+				<li>-bisi -- fresh, raw, green (unripe), uncooked, wet</li>
+				<li>ku-biza (je, jije) -- to boil (int.)</li>
+				<li>bo -- they, them</li>
+				<li>im-boga -- vegetable (leafy)</li>
+				<li>im-bogo -- buffalo</li>
+ 				<li>ku-boha (she) -- to tie</li>
+				<li>ku-bohora (ye) -- to untie</li>
+				<li>uku-boko -- arm</li>
+				<li>ku-bona (nye) -- to see</li>
+				<li>ku-bora (ze) -- to rot, spoil</li>
+				<li>ku-borerwa (rewe) -- to be drunk</li>
+				<li>umu-bu -- mosquito</li>
+				<li>im-bugita -- knife</li>
+				<li>buhoro (or, buhoro-buhoro) -- slowly, softly, fairly well</li>
+				<li>bukeye -- the next day</li>
+				<li>ku-bumba (vye) -- to make bricks, to work clay, mold</li>
+				<li>i-bumoso -- on the left</li>
+				<li>buno -- then</li>
+				<li>ku-bura (ze) -- to lack, not find, fail, fail to find</li>
+				<li>uru-bura -- hail</li>
+				<li>ku-burana (nye ) -- to plead, defend oneself</li>
+				<li>i buryo -- on the right</li>
+				<li>im-buto -- seed, plant, fruit</li>
+				<li>i-buye -- stone</li>
+				<li>ku-buza (jije) to hinder, prevent, stop</li>
+			</ul>
+			<ul id="C" class="ltrUl">C
+				<li>gu-ca (ciye) -- to cut (as e.g. a tree)</li>
+				<li>in-cabiti -- axe</li>
+				<li>gu-cagagura (ye) - to chop up</li>
+				<li>umu-camanza -- judge</li>
+				<li>gu-cana (nye) -- to start a fire</li>
+				<li>cane -- very, much (as an adverb)</li>
+				<li>canke -- or</li>
+				<li>umu-canwa (no pl.) -- fire (as in fireplace)</li>
+				<li>igi-capu (Sw.) -- picture</li>
+				<li>igi-ce -- part, half, chapter</li>
+				<li>i-cenda --nine</li>
+				<li>gu-cereza (je) -- to be silent, to silence</li>
+				<li>i-ci -- dry season (5th cl.)</li> 
+				<li>igi-ciro -- price, value</li>
+				<li>i-co -- dirt (5th cl.)</li>
+				<li>umu-co -- light</li>
+				<li>igi-cu -- cloud</li>
+				<li>igi-cugu -- midnight</li>
+				<li>gu-cumba (vye) -- o mix bread, knead, mash</li>
+				<li>i-cumi -- ten</li>
+				<li>i-cumu -- spear (5th cl.)</li> 
+				<li>gu-cungura (ye) -- to redeem, to pay ransom</li>
+				<li>umu-cungwe (or, a) (pl. 2nd or 5th) orange, (fruit)</li>
+				<li>gu-cura (ye) -- to send back, to lead home (cows)</li>
+				<li>in-cuti -- relative, extra close friend</li>
+			</ul>
+			<ul id="D" class="ltrUl">D
+				<li>in-da -- louse</li>
+				<li>in-da -- stomach, pregnancy</li>
+				<li>ku-dahwa (shwe) -- to vomit</li>
+				<li>i-dakika -- minute (5th)</li>
+				<li>ku-dandaza (je) --to buy to resell</li>
+				<li>in-daro -lodging, sleeping place</li>
+				<li>data -- my, our father (1st. class)</li>
+				<li>dawe -- my, our father (1st. class)</li> 
+				<li>ubu-dede -- beads</li>
+				<li>ku-dendereza (je) -- to accuse falsely, persecute</li>
+				<li>in-deruzo -- stretcher</li>
+				<li>ku-digadiga (ze) -- to tickle</li>
+				<li>in-dimiro -- field</li>
+				<li>in-dirimbo -- song, hymn</li>
+				<li>i-dirisha (Sw.) -- window</li>
+				<li>in-dobo (Sw.) -- pail, bucket</li>
+				<li>ku-domeka (tse) -- to light (e.g. lantern)</li>
+				<li>ku-duga (ze) -- to go up (e.g. hill)</li>
+				<li>in-dwara -- illness, sickness</li>
+				<li>in-dya -- food</li>
+			</ul>
+			<ul id="E" class="ltrUl">E
+				<li>kw-egera (reye) -- to draw near, approach</li>
+				<li>ego -- yes</li>
+				<li>ejo -- yesterday, tomorrow</li>
+				<li>kw-emera (ye) -- to agree, admit, accept, be willing</li>
+				<li>kw-enda (ze) -- to receive, to take a wife</li>
+				<li>umw-enda -- debt</li>
+				<li>mw-ene -- son of, daughter of (1st class)</li>
+				<li>ubg-enge -- wisdom, intelligence</li>
+				<li>kw-era (ze) -- to be white, pure</li>
+				<li>kw-ereka (tse ) -- to show</li>
+				<li>ic-ete -- letter</li>
+				<li>umw-ete -- zeal, earnestness (kugira umwete - to be zealous)</li>
+				<li>kw-eza -- to make white, pure</li>
+				<li>ukw-ezi -- moon, month</li>
+				<li>am-eza -- table</li>
+			</ul>
+			<ul id="F" class="ltrUl">F
+				<li>i-faranga -- franc</li>
+				<li>gu-fasha (shije) -- to help</li>
+				<li>gu-fata (she) -- to take hold of, grasp, catch, seize</li>
+				<li>gu-fatanya (nije) -- to have fellowship, to cooperate</li>
+				<li>i-fi -- fish (pl. ifi or amafi)</li>
+				<li>-fise -- have, has</li>
+				<li>i-fu -- flour (or, ubufu)</li>
+				<li>umu-fundi (Sw.) -- skilled workman</li>
+				<li>im-fura -- first-born child</li>
+				<li>i-furo -- stove</li>
+				<li>im-furuka -- corner of room or house</li>
+				<li>gu-futa (se) -- to erase</li>
+				<li>gu-fyatura (ye) -- to make bricks</li>
+			</ul>
+			<ul id="G" class="ltrUl">G
+				<li>ku-gaba (vye) --to rule, govern, give</li>
+				<li>ku-gabanya (nije) -- to diVide into groups</li>
+				<li>ku-gabitanya (nije) -- to be very wicked</li> 
+				<li>in-gabo -- soldier</li>
+				<li>umu-gabo -- man (married), husband</li>
+				<li>ku-gabura (ye) -- to divide, distribute</li>
+				<li>ku-gaburira (ye) -- to feed (distribute food)</li>
+				<li>umu-ganga -- doctor</li>
+				<li>umu-gani -- proverb, parable</li>
+				<li>in-gano -- wheat</li>
+				<li>umu-ganwa -- great chief, prince</li>
+				<li>ku-ganza (jije) -- to rule, govern</li>
+				<li>iki-ganza -- hand (esp. palm)</li>
+				<li>ku-garariza (je) -- to rebel, refuse to be ruled</li>
+				<li>-gari -- wide, broad (rarely used)</li>
+				<li>ku-garuka (tse ) -- to return (to where speaker is), come back</li>
+				<li>in-gata -- grass pad used on head when carrying a load</li>
+				<li>ku-gaya (ye) -- to hate, scorn, despise</li>
+				<li>ku-gegena (nnye) -- to cut crosswise, slide</li>
+				<li>ku-genda (giye) -- to go, walk</li>
+				<li>uru-gendo -- journey</li>
+				<li>in-gene (or, ubugene) -- how</li>
+				<li>umu-geni -- bride</li>
+				<li>umu-genzi -- friend, wife, husband</li>
+				<li>umu-genzo -- custom</li>
+				<li>ku-gera (ze) -- to measure, command, reach a certain point (of time)</li>
+				<li>ku-gerageza (je) -- to try, attempt, tempt</li>
+				<li>ku-gesa (she) -- to harvest millet</li>
+				<li>in-gese -- rust</li>
+				<li>in-geso -- habit, custom</li>
+				<li>ku-geza (jeje) -- to tempt, try out, also, caus. of -gera</li>
+				<li>ku-geza aho -- until</li>
+				<li>i-gi (or, irigi) -- egg (pl. amagi)</li>
+				<li>uru-gi -- door</li>
+				<li>ubu-gingo -- life</li>
+				<li>ku-gira (ze) -- to do, make, have</li>
+				<li>ku-gira ngo -- to think, suppose, in order that</li>
+				<li>iki-girwamana -- idol, thing worshipped</li>
+				<li>umu-gisha -- blessing</li>
+				<li>uru-go -- kraal, homestead, enclosure</li>
+				<li>ku-gobera (ye) -- to force, insist on</li>
+				<li>ku-godoka (tse) -- to quit work for the day</li>
+				<li>in-goma -- drum, authority, throne</li>
+				<li>ku-gomba (vye) -- to want</li>
+				<li>umu-gongo -- back (of person, animal)</li>
+				<li>iki-gongwe -- mercy, pity, forgiveness</li>
+				<li>ku-gora (ye) -- to annoy, be difficult, trouble</li>
+				<li>ku-gorama (mye) -- to be crooked</li>
+				<li>umu-gore -- woman, wife</li>
+				<li>iki-gori -- corn, maize</li>
+				<li>umu-goroba -- afternoon (3:00-6:00)</li>
+				<li>ku-gorora (ye) -- to make straight</li>
+				<li>ku-gororoka (tse) -- to be straight, to be righteous</li>
+				<li>ama-gorwa -- troubles, difficulties</li>
+				<li>umu-gozi -- string, rope</li>
+				<li>ku-gubga (we) -- (passive of kugwa}, to be settled down nicely</li>
+				<li>i-gufa -- bone</li>
+				<li>-gufi (gufinya, gufiya) -- short, low, shallow</li>
+				<li>ku-guma (mye) -- to stay, remain</li>
+				<li>uru-guma -- wound</li>
+				<li>i-gunira -- sack, burlap</li>
+				<li>ku-gura (ze) -- to buy, sell</li>
+				<li>ku-gurana (nye) -- to borrow, lend (money, not an article)</li>
+				<li>uku-guru -- leg</li>
+				<li>in-gurube -- pig</li>
+				<li>ku-guruka (tse) -- to fly</li>
+				<li>ku-gwa (guye) -- to fall</li>
+				<li>in-gwe -- leopard</li>
+				<li>ku-gwira (riye) -- to multiply (int.)</li>
+				<li>ku-gwiza (je) -- to multiply (tr.)</li>
+			</ul>
+			<ul id="H" class="ltrUl">H
+				<li>gu-ha (haye) -- to give</li>
+				<li>hafi -- near</li>
+				<li>gu-haga (ze) -- to eat a lot, be satisfied</li>
+				<li>gu-hagarara (ye, or, hagaze) -- to stand, wait, stop</li>
+				<li>hagati -- in the middle, midst</li>
+				<li>gu-haguruka (tse) -- to stand up</li>
+				<li>gu-hakana (nye) -- to deny, refuse</li>
+				<li>hakuno -- on this side (of river, valley)</li>
+				<li>hakurya -- on the other side (river, valley)</li>
+				<li>aga-hama -- red</li>
+				<li>gu-hamagara (ye) -- to call</li>
+				<li>gu-hamba (vye) -- to bury</li>
+				<li>hamwe -- the same, together</li>
+				<li>gu-hana (nnye) -- to punish, scold</li>
+				<li>imi-hana -- village, collection of huts</li> 
+				<li>gu-hanagura (ye) -- to wipe, wipe away</li>
+				<li>uru-hande -- side (i ruhande -- beside)</li>
+				<li>ama-hanga -- foreign countries</li>
+				<li>hano -- here</li>
+				<li>igi-hano -- punishment</li>
+				<li>gu-hanura (ye) -- to warn, advise</li>
+				<li>hanyuma -- afterward, after, later</li>
+				<li>hanze -- outside (of house)</li>
+				<li>igi-harage -- bean</li>
+				<li>gu-harira (ye) -- to forgive</li>
+				<li>hariya -- over there</li>
+				<li>haruguru -- toward the top, higher up, inner (room of the house)</li>
+				<li>gu-harura (ye) -- to scrape, scratch, dig just top of soil</li>
+				<li>gu-har&#363;ra (ye) -- to count</li>
+				<li>igi-haruro -- number</li>
+				<li>ama-hasa -- twins</li>
+				<li>hasi -- on the ground, floor</li>
+				<li>igi-haya -- white potato</li>
+				<li>-he? -- wHch? (Question only)</li>
+				<li>igi-he -- time</li>
+				<li>gu-heba (vye) -- to leave, forsake</li>
+				<li>hehe? -- where? (Question only)</li>
+				<li>hejuru -- above, up</li>
+				<li>gu-heka (tse) -- to carry on back</li>
+				<li>gu-hekenya (nye) -- to chew</li>
+				<li>igi-heko -- charm, fetish</li>
+				<li>gu-hema (mye) -- to breathe</li>
+				<li>gu-hemba (vye) -- to pay (for work done)</li>
+				<li>i-hembe -- horn (of animal)</li>
+				<li>gu-henda (ze) -- to deceive</li>
+				<li>hepfo -- below, down</li>
+				<li>gu-hera (ze) -- to finish, end (int.)</li>
+				<li>ama-hera -- money</li>
+				<li>gu-herekeza (je) -- to accompany, to see home</li>
+				<li>ama-heri -- itch, scabies</li>
+				<li>umu-heto -- bow (as used with arrows)</li>
+				<li>gu-heza (hejeje) -- to finish (tr.)</li>
+				<li>gu-hezagira (ye) -- to bless, dedicate</li>
+				<li>gu-higa (ze) -- to hunt (for game)</li>
+				<li>igi-himba -- part, chapter</li>
+				<li>gu-himbaza (je) -- to praise</li>
+				<li>aga-hinda -- sorrow, grief</li>
+				<li>gu-hinda (nze) agashitsi -- to shake, tremble</li>
+				<li>gu-hinduka (tse) -- to change (int.)</li>
+				<li>gu-hindukira (ze) -- to turn around (int.)</li>
+				<li>gu-hindukiza (je) -- to turn around (tr.)</li>
+				<li>hino -- on this side of</li>
+				<li>umu-hira -- home</li>
+				<li>aga-hiri -- cold (in head)</li>
+				<li>gu-hirwa (riwe) -- to be fortunate</li>
+				<li>hirya -- beyond</li>
+				<li>gu-hisha (shije) -- to hide</li>
+				<li>gu-hishura (ye) -- to reveal</li>
+				<li>gu-hita (se) -- to pass</li>
+				<li>gu-hitwa (swe) -- to have diarrhea</li>
+				<li>umu-hogo -- throat</li>
+				<li>gu-homa (mye) -- to plaster, white-wash</li>
+				<li>ubu-homa -- dirt (on body, or clothes)</li>
+				<li>gu-hona (nnye) -- to perish, be destroyed</li>
+				<li>gu-honnya (neje) -- to destroy</li>
+				<li>gu-hora (ze) -- to always do a thing, to cool, to be quiet</li>
+				<li>gu-h&#333;ra (ze) -- to avenge</li>
+				<li>ama-horo -- peace</li>
+				<li>umu-horo -- sickle</li>
+				<li>hose -- everywhere</li>
+				<li>igi-hugu -- country</li>
+				<li>gu-huha (she) -- to blow</li>
+				<li>gu-huma (mye) -- to be blind</li>
+				<li>gu-humana (nye) -- to defile, make dirty</li>
+				<li>igi-humbi -- thousand</li>
+				<li>gu-humiriza (je) -- to close one's eyes</li>
+				<li>gu-humuriza (je) -- to comfort</li>
+				<li>gu-hunga (ze) -- to flee</li>
+				<li>umu-hungu -- boy, son</li>
+				<li>gu-hura (ye) -- to meet</li>
+				<li>uru-husha -- permission, vacation, rest</li>
+				<li>igi-hute -- boil, abcess</li>
+				<li>umu-hutu -- one of common class among Barundi</li>
+				<li>i-hwa -- thorn</li>
+				<li>gu-hwanya (nije) -- to meet</li>
+				<li>gu-hwata (se) -- to peel (with knife)</li>
+				<li>gu-hwera (reye) -- to die</li>
+			</ul>
+			<ul id="I" class="ltrUl">I
+				<li>i -- at, to</li>
+				<li>kw-iba (vye) -- to steal</li>
+				<li>kw-ibagira (ye) -- to forget</li>
+				<li>kw-ibuka (tse) -- to remember</li>
+				<li>kw-ibutsa (kije) -- to remind</li>
+				<li>kw-ica (she) -- to kill</li>
+				<li>umw-icanyi -- murderer</li>
+				<li>kw-icara (ye) -- to sit down</li>
+				<li>kw-ifuza (je) -- to covet, long for, want very much</li>
+				<li>kw-iga (ze) -- to learn</li>
+				<li>kw-igana (nye) -- to imitate</li>
+				<li>umw-igeme -- girl</li>
+				<li>kw-igisha (shije) -- to teach</li>
+				<li>umw-igisha -- teacher</li>
+				<li>kw-igishwa (shijwo) -- to be taught, to learn</li>
+				<li>umw-igishwa -- pupiL</li>
+				<li>kw-ihana (nnye) -- to repent, confess</li>
+				<li>kw-ihangana (nye) -- to be patient, endure, wait patiently</li>
+				<li>kw-ihebera (ye) -- to yield oneself</li>
+				<li>kw-iherera (reye) -- to be alone</li>
+				<li>kw-ihuta (se) -- to hurry</li>
+				<li>kw-ikangura (ye) -- to awaken (int.)</li>
+				<li>iki -- what?, this</li>
+				<li>umw-ikomo -- hard feelings</li>
+				<li>kw-imba (mvye) -- to dig a hole</li>
+				<li>imbere -- (see under b)</li>
+				<li>kw-imbura (ye) -- to harvest</li>
+				<li>inabukwe -- mother-in-law (1st cl.)</li>
+				<li>kw-inginga (ze) -- to beseech, plead with</li>
+				<li>kw-injira (ye) -- to enter</li>
+				<li>ino -- here</li>
+				<li>-inshi -- much, many</li>
+				<li>iry-inyo -- tooth (pl. amenyo )</li>
+				<li>inyuma -- (see under y)</li>
+				<li>kw-irabura (ye) -- to be black</li>
+				<li>ic-irore -- mirror</li>
+				<li>kw-iruka (tse) -- to run</li>
+				<li>kw-irukana (nye ) -- to chase away</li>
+				<li>ubg-ishaza -- peas</li>
+				<li>kw-ishura (ye) -- to answer (to question)</li>
+				<li>kw-ita (se) -- to call, name</li>
+				<li>kw-itaba (vye) -- to answer (when called)</li>
+				<li>kw-itonda (nze) -- to be careful</li>
+				<li>urw-itwazo -- excuse</li>
+				<li>kw-iyoga (ze) -- to wash feet, any part of body, to bathe</li>
+				<li>kw-iyuhagira (ye) -- to bathe (oneself)</li>
+				<li>kw-iyumvira (riye) -- to think, think about</li>
+				<li>-iza -- nice, good, clean, pretty, beautiful</li>
+				<li>ubg-iza -- glory, beauty</li>
+				<li>umw-iza -- darkness</li>
+				<li>kw-izera (ye) -- to believe, trust, faith</li>
+				<li>kw-izigira (ye) -- to believe, trust, hope</li>
+			</ul>
+			<ul id="J" class="ltrUl">J
+				<li>ku-ja (giye) -- to go</li>
+				<li>ku-jabuka (tse) -- to cross over (river, lake)</li>
+				<li>i-jambo -- word (pl. amajambo or amagambo</li>
+				<li>i-jana -- hundred</li>
+				<li>ku-jana (nye) -- to go with, take with</li>
+				<li>umu-jenama -- steward, advisor, member of council</li>
+				<li>jewe -- I, me</li>
+				<li>ku-jisha (she) -- to knit, braid, weave</li>
+				<li>i-jisho -- eye (pl. amaso)</li>
+				<li>i-joro -- night</li>
+				<li>iki-juju -- fool</li>
+				<li>iki-jumbu (or, -mpu) -- sweet potato</li>
+				<li>i-juru -- heaven, sky</li>
+				<li>i-jwi -- voice</li>
+			</ul>
+			<ul id="K" class="ltrUl">K
+				<li>in-ka -- cow</li>
+				<li>mu-ka -- wife of</li>
+				<li>gu-kama (mye) -- to milk</li>
+				<li>kandi -- and, also</li>
+				<li>kangahe -- how often? how many times?</li>
+				<li>gu-kanguka (tse) -- to awaken (int.)</li>
+				<li>gu-kangura (ye) -- to waken (tr.)</li>
+				<li>gu-kanya (nye) -- to be cold, damp</li>
+				<li>i-kanya (Sw.) -- fork</li>
+				<li>i-kara -- hot coal</li>
+				<li>gu-karaba (vye) -- to wash one's hands</li>
+				<li>i-karamu (Sw.) -- pencil</li>
+				<li>gu-karanga (ze) -- to fry, broil</li>
+				<li>uru-karatasi (Sw.) -- paper (sometimes 2nd or 4th class)</li>
+				<li>gu-kariha (she) -- to be sharp</li>
+				<li>gu-karisha (she) -- to sharpen</li>
+				<li>umu-kate -- bread (Sw.)</li>
+				<li>-ke (-keya) -- few, scanty, little (quantity)</li>
+				<li>gu-keba (vye) -- to cut (meat, flesh, cloth)</li>
+				<li>umu-kecuru -- old woman</li>
+				<li>umu-keka -- small grass mat</li>
+				<li>gu-kekeranya (nye) -- to doubt</li>
+				<li>gu-kena (nnye) -- to be in need, poverty, to lack, be poor</li>
+				<li>in-kende -- monkey</li>
+				<li>ubu-kene -- need, poverty</li>
+				<li>kenshi -- often, many times</li>
+				<li>kera -- long ago, a long time ahead</li>
+				<li>in-kere -- berry</li>
+				<li>imi-kerera -- green beans</li>
+				<li>gu-kererwa (rewe) -- to be late, to be short (in sense of lack)</li>
+				<li>uru-kerezo (or, urukero) -- saw</li>
+				<li>bga-keye -- good morning (not literal)</li>
+				<li>bu-keye -- the next day</li>
+				<li>ki -- what kind of?</li>
+				<li>iki -- what? this</li>
+				<li>ubu-ki -- honey</li>
+				<li>gu-kikiza (je) -- to surround (as of countries)</li>
+				<li>gu-kina (nnye) -- to play</li>
+				<li>gu-kira (ze) -- to get well, heal (int.)</li>
+				<li>igi-kiriza -- chest (of person)</li>
+				<li>gu-kiza (jije) -- to save, heal, save from (tr.)</li>
+				<li>aga-kiza -- salvation</li>
+				<li>umu-kiza -- savior</li>
+				<li>gu-kizwa (jijwe) -- to be saved, healed</li>
+				<li>ko -- that (conj.)</li>
+				<li>umu-kobga -- girl, daughter</li>
+				<li>in-kofero (Sw.) -- hat</li>
+				<li>igi-koko -- wild animal, insect</li>
+				<li>in-koko -- chicken</li>
+				<li>in-k&#333;ko -- flat basket (with lid)</li>
+				<li>gu-komanga (nze) -- to knock</li>
+				<li>gu-komantara (ye) -- to harden (as, heart)</li>
+				<li>igi-kombe -- cup</li>
+				<li>in-kombe -- shore, edge of lake or river</li>
+				<li>gu-komera (ye) -- to be strong, well</li>
+				<li>igi-komere -- ulcer</li>
+				<li>gu-komereka (tse) -- to be wounded, injured</li>
+				<li>inkomezi -- strength</li>
+				<li>igi-koni -- kitchen</li>
+				<li>in-koni -- walking stick</li>
+				<li>in-kono -- clay cooking pot</li>
+				<li>imi-konyogo -- green string beans</li>
+				<li>gu-kora (ze) -- to work, do, make, fix, repair</li>
+				<li>gu-korana (nye) -- to work together, to meet together</li>
+				<li>i-koraniro -- meeting, gathering</li>
+				<li>gu-koranya (nye) -- to gather together (tr.)</li>
+				<li>i-kori -- tax</li>
+				<li>gu-koroka (tse) -- to fall from above</li>
+				<li>gu-korora (ye) -- to cough, make fall</li>
+				<li>in-korora -- cough</li>
+				<li>igi-korwa -- work, task</li>
+				<li>in-kota -- sword</li>
+				<li>in-kovu -- scar</li>
+				<li>urakoze -- thank you</li>
+				<li>umu-kozi -- workman, employee</li>
+				<li>ku -- on, at, to</li>
+				<li>in-kuba -- thunder</li>
+				<li>kubga -- on account of, for the sake of</li>
+				<li>gu-kubita (se) -- to strike, beat, hit</li>
+				<li>gu-kubura (ye) -- to sweep</li>
+				<li>kuko -- because</li>
+				<li>gu-kumbura (ye) -- to be lonesome for</li>
+				<li>kumbure -- perhaps</li>
+				<li>in-kumi -- young lady (unmarried)</li>
+				<li>kumwe -- together</li>
+				<li>gu-kunda (nze) -- to like, love</li>
+				<li>gu-kundira (ye) -- to allow</li>
+				<li>uru-kundo -- love</li>
+				<li>umu-kungugu -- dust</li>
+				<li>gu-kunkumura (ye) -- to shake (tr.)</li>
+				<li>gu-kura (ze) -- to grow</li>
+				<li>gu-k&#363;ra (ye) -- to take away, subtract</li>
+				<li>kure -- far away, far</li>
+				<li>gu-kurikira (ye) -- to follow</li>
+				<li>kuru -- important, elder, great, senior (umukuru -- elder brother or sister, important person)</li>
+				<li>in-kuru -- news, fame</li>
+				<li>gu-kwa (koye) -- to pay dowry</li>
+				<li>in-kware -- partridge</li>
+				<li>uru-kwavu -- rabbit</li>
+				<li>ubu-kwe -- wedding</li>
+				<li>umu-kwe -- bridegroom</li>
+				<li>gu-kwega (ze ) -- to drag, pull, draw</li>
+				<li>in-kweto -- sandal</li>
+				<li>uru-kwi -- stick of firewood</li>
+				<li>gu-kwira (ye) -- to multiply (int.), be enough, must, be necessary, be worthy</li>
+			</ul>
+			<ul id="M" class="ltrUl">M
+				<li>mama -- my, our mother (1st class)</li>
+				<li>I-mana -- God</li>
+				<li>aka-mango -- cold (in head or chest)</li>
+				<li>ku-manika (tse) -- to hang up, place above</li>
+				<li>ku-manuka (tse) -- to go down (e. g. hill)</li>
+				<li>ku-mara (ze) -- to end (int.), to spend , time, stay</li>
+				<li>ku-m&#257;ram&#257;ra (ye) -- to be ashamed</li>
+				<li>umu-marayika (Sw.) -- angel</li>
+				<li>aka-mashu -- small trap</li>
+				<li>mawe -- my, our mother (1st class)</li>
+				<li>maze -- then</li>
+				<li>mbega --(introduces a question)</li>
+				<li>mbere -- in fact</li>
+				<li>uru-me -- dew</li>
+				<li>ku-mena (nnye ) -- to break (tr.)</li>
+				<li>ku-menya (nye) -- to know</li>
+				<li>ku-menyera (reye) -- to be accustomed to</li>
+				<li>iki-menyetso -- sign</li>
+				<li>ku-mera (ze) -- to germinate, to be in a certain state (e.g. ameze ate), to be like</li>
+				<li>ku-mesura (ye) -- to wash (clothes)</li>
+				<li>ku-mira (ze) -- to swallow</li>
+				<li>i bu-moso -- at the left</li>
+				<li>ku-mota {se) -- to smell nice</li>
+				<li>mu -- in, at</li>
+				<li>iki-muga -- cripple</li> 
+				<li>mugabo -- however, but</li>
+				<li>muka -- (see ka )</li>
+				<li>u-munani -- eight</li>
+				<li>musi -- under, below, beneath</li>
+				<li>-mwe -- one</li>
+				<li>mwebge -- you (pl.)</li>
+				<li>mwiriwe -- good afternoon (2nd greeting)</li>
+			</ul>
+			<ul id="N" class="ltrUl">N
+				<li>na -- and, by, even, with</li>
+				<li>nabi -- badly</li>
+				<li>n'agasaga -- goodbye</li>
+				<li>naho -- although</li>
+				<li>i-nama -- advice, council, counsel, committee</li>
+				<li>namba -- if</li>
+				<li>i-nanasi -- pineapple</li>
+				<li>ku-nanirwa (niwe) -- to be tired, unable to do</li>
+				<li>nde -- who? (questions only)</li>
+				<li>-ndi -- other, another, more</li>
+				<li>i-ndwi -- seven</li>
+				<li>-ne -- four</li>
+				<li>ku-nebga (bge) -- to be lazy</li>
+				<li>ku-nesha (sheje) -- to defeat, conquer</li>
+				<li>neza -- nicely, well</li>
+				<li>ku-nezereza (je) -- to please, make happy</li>
+				<li>umu-nezero -- joy</li>
+				<li>ku-nezerwa (rewe) -- to be happy</li>
+				<li>ku-ngana (nye) -- to be equal, the same, to be (so) many</li>
+				<li>ni -- it is, they are, he is, she is</li>
+				<li>n'ingoga -- quickly</li>
+				<li>-nini (niniya) -- big, large, wide, thick</li>
+				<li>nka -- like (prep.)</li>
+				<li>i-no -- toe (pl. amano)</li>
+				<li>none -- now</li>
+				<li>nta -- no, none</li>
+				<li>aha-ntu -- place</li>
+				<li>iki-ntu -- thing</li>
+				<li>ubu-ntu -- grace</li>
+				<li>umu-ntu -- person</li>
+				<li>ku-nuka (tse) -- to smell bad</li>
+				<li>nuko -- therefore, then</li>
+				<li>ku-numa (mye) -- to be silent, quiet</li>
+				<li>aka-nwa -- mouth</li>
+				<li>umu-nwa -- lip</li>
+				<li>ku-nya (neye) -- to defecate</li>
+				<li>ku-nyaga (ze) -- to take by force</li>
+				<li>umu-nyakazi -- workman</li>
+				<li>ama-nyama -- sauciness, quarrelsomeness</li>
+				<li>umu-nyavyaha -- sinner</li>
+				<li>ku-nyegeza (je) -- to hide</li>
+				<li>nyene -- master, owner (1st class), also as adverb, only</li>
+				<li>uru-nyenyeri -- star</li>
+				<li>ku-nyiganyiga -- to shake, tremble (int.)</li>
+				<li>nyina -- his, her, their mother (1st cl.)</li>
+				<li>ku-nyoha (she) -- to choke (tr.)</li>
+				<li>nyoko -- your mother (1st class)</li>
+				<li>iki-nyoma -- lie, falsehood</li>
+				<li>umu-nyororo -- chain, prison</li>
+				<li>ku-nyoterwa (tewe) -- to be thirsty</li>
+				<li>umu-nyu -- salt</li>
+				<li>uru-nyuzi (Sw.) -- thread</li>
+				<li>ku-nywa (nyoye) -- to drink</li>
+				<li>-nzinya -- tiny (with 7th class only)</li>
+			</ul>
+			<ul id="O" class="ltrUl">O
+				<li>ubg-oba -- fear</li>
+				<li>ic-obo -- hole (in ground)</li>
+				<li>urw-obo -- hole (in ground)</li>
+				<li>kw-oga (ze) -- to wash feet, swim</li>
+				<li>ubg-oko -- race, nation</li>
+				<li>ivy-ondo -- mud</li>
+				<li>umw-onga -- valley</li>
+				<li>kw-ongera (ye) -- to repeat, increase, add to, give more</li>
+				<li>kw-onona (nnye) -- to damage, spoil</li>
+				<li>umw-oro -- poor man</li>
+				<li>kw-oroha (she) -- to be soft, easy</li>
+				<li>-ose -- all, every</li>
+				<li>am-osozi -- tears</li>
+				<li>kw-ota (se) -- to warm oneself by fire</li>
+				<li>kw-otsa (okeje) -- to roast in fire</li>
+				<li>umw-otsi -- smoke</li>
+				<li>oya -- no</li>
+				<li>ubg-oya -- hair (except of human head)</li>
+				<li>kw-oza (geje) -- to wash</li>
+			</ul>
+			<ul id="P" class="ltrUl">P
+				<li>im-pamba -- food for a journey</li>
+				<li>gu-panga ameza (nze) (Sw.) -- to set the table</li>
+				<li>umu-panga -- machete, broad-bladed grass knife</li>
+				<li>gu-pangura (ye) ameza (Sw.) -- to clear the table</li>
+				<li>umu-pasitori -- pastor</li>
+				<li>im-pene -- goat</li>
+				<li>im-pera -- end, last of anything</li>
+				<li>im-p&#275;ra -- reward, remuneration</li>
+				<li>gu-pfa (fuye) -- to die</li>
+				<li>umu-pfakazi -- widow</li>
+				<li>igi-pfamatwi -- deaf person</li>
+				<li>umu-pfasoni -- noble</li>
+				<li>uru-pfu -- death</li>
+				<li>gu-pfuha (she) -- to be dull (e.g. tool)</li>
+				<li>gu-pfuka (tse) -- to wrap, cover</li>
+				<li>gu-pfukama (mye) -- to kneel</li>
+				<li>umu-pfuko -- pocket, sack</li>
+				<li>gu-pfuma (mye) -- to prefer as lesser of 2 evils</li>
+				<li>umu-pfumu -- witch doctor</li>
+				<li>gu-pfundikira (ye) -- to cover (as pot)</li>
+				<li>gu-pfungana (nye) -- to be narrow</li>
+				<li>igi-pfungu -- fog</li>
+				<li>uru-pfunguzo -- key</li>
+				<li>igi-pfunsi -- fist</li>
+				<li>gu-pima (mye) (Sw.) -- to measure, examine</li>
+				<li>umu-pira (Sw.) -- rubber ball, tire, sweater</li>
+				<li>i-piripiri (Sw.) -- pepper</li>
+				<li>im-pongo -- small antelope</li>
+				<li>im-pumyi --  person</li>
+				<li>im-punzi -- refugee</li>
+				<li>im-puzu -- clothes, clothing</li>
+				<li>im-pwemu -- spirit, breath</li>
+			</ul>
+			<ul id="R" class="ltrUl">R
+				<li>ku-raba (vye) -- to look at, see (as, to go see</li>
+				<li>ku-raga (ze) -- to leave as inheritance</li>
+				<li>ku-ragira (ye) -- to herd, shepherd</li>
+				<li>iki-rago -- mat (grass)</li>
+				<li>ku-rahira (ye) -- to vow, swear</li>
+				<li>ku-ramba (vye) -- to live long</li>
+				<li>ku-raka (tse) -- to be angry</li>
+				<li>ubu-rake -- anger, (no pl.)</li>
+				<li>ku-ramutsa (kije) -- to greet (personally, not by letter)</li>
+				<li>ku-ramvura (ye) -- to stretch out</li>
+				<li>ku-randura (ye ) -- to uproot, pull out</li>
+				<li>umu-rango -- daytime (esp. about noon)</li>
+				<li>ku-rara (ye) -- to spend the night</li>
+				<li>iki-raro -- bridge</li>
+				<li>ku-rasa (she) -- to shoot with arrow, (of sun) to rise</li>
+				<li>ama-raso -- blood</li>
+				<li>iki-rato -- shoe</li>
+				<li>umu-ravyo -- lightning</li>
+				<li>-re-re -- tall, high, deep, long</li>
+				<li>ku-rega (ze) -- to accuse, accuse of</li>
+				<li>ku-reka (tse) -- to leave, cease, allow, stop</li>
+				<li>ku-rema (mye) -- to create</li>
+				<li>i-rembo -- gate, entrance</li>
+				<li>ku-remera (reye) -- to be heavy</li>
+				<li>ku-remerwa (rewe ) -- to be heavy-laden</li>
+				<li>iki-renge -- foot</li>
+				<li>ku-rera (ze) -- to lift a child, to train, rear a child</li>
+				<li>iki-rere -- air</li>
+				<li>rero -- then, so</li>
+				<li>-ri -- is, are</li>
+				<li>uku-ri -- truth</li>
+				<li>i-rigi -- (see under gi)</li>
+				<li>ku-rima (mye) -- to hoe, cultivate, dig</li>
+				<li>umu-rima -- garden</li>
+				<li>uru-rimi -- tongue, language</li>
+				<li>ku-rinda (ze) -- to guard, watch, ought, must</li>
+				<li>ku-rira (ze) -- to cry, weep</li>
+				<li>ubu-riri -- bed</li>
+				<li>ku-ririmba (vye) -- to sing</li>
+				<li>umu-riro (no pl.) -- fire</li>
+				<li>umu-rizo -- tail</li>
+				<li>ubu-ro (no pl.) -- millet</li>
+				<li>ku-roba (vye) -- to fish</li>
+				<li>ku-roga (ze) -- to bewitch</li>
+				<li>ku-rokora (ye) -- to save, deliver</li>
+				<li>ku-rondera (ye) -- to search for, look for, get</li>
+				<li>ku-ronga (ze) -- to wash (vegetables)</li>
+				<li>ubu-rongo -- mud, clay</li>
+				<li>umu-rongo -- line, row</li>
+				<li>ku-rongora (ye) -- to marry (of man; the passive form is used of the girl)</li>
+			 	<li>ku-r&#333;ng&#333;ra (ye) -- to lead</li>
+				<li>ku-ronka (nse) -- to receive, find, get</li>
+				<li>ku-rorera (reye) -- wait, to wait for</li>
+				<li>ku-rota (se) -- to dream</li>
+				<li>-rtya (rtyo) -- like this, like that</li>
+				<li>ku-ruha (she) -- to be tired</li>
+				<li>ku-ruhuka (tse) -- to rest</li>
+				<li>mu-rumuna -- younger brother, sister</li>
+				<li>ku-rungika (tse) -- to send</li>
+				<li>ku-rusha (hije) -- to surpass</li>
+				<li>ama-rushwa -- troubles</li>
+				<li>ku-ruta (she ) -- to surpass, be more</li>
+				<li>ku-rwana (nye ) -- to fight (int.)</li>
+				<li>ku-rwara (ye) -- to be ill</li>
+				<li>ku-rwaza (je) -- to care for sick</li>
+				<li>rwose -- completely, absolutely, very much</li>
+				<li>ku-rya (riye) -- to eat</li>
+				<li>ku-ryama (mye) -- to go to bed</li>
+				<li>umu-ryango -- door, family (tones diferent)</li>
+				<li>ryari? -- when? (in question only)</li>
+				<li>i-ryinyo -- (see under -inyo)</li>
+				<li>ubu-ryo -- way, opportunity, right side, kind</li>
+				<li>i bu-ryo -- at the right</li>
+				<li>ku-ryoha (she} -- to be excellent, delicious</li>
+			</ul>
+			<ul id="S" class="ltrUl">S
+				<li>-sa -- only (adj.), alone</li>
+				<li>ubu-sa -- in vain, for nothing, nothing</li>
+				<li>gusa -- (adv.) only</li>
+				<li>gu-sa (verb) -- to be like</li>
+				<li>gu-saba (vye) -- to ask for, pray</li>
+				<li>i-sabuni -- soap</li>
+				<li>igi-sagara -- large group of huts, town, city</li>
+				<li>i-saha -- clock, hour (usually 3rd cl.)</li>
+				<li>i-sahane (Sw.) -- plate, dish (3rd cl. sing.; 5th cl. pl.)</li>
+				<li>i-saho -- sack, bag</li>
+				<li>ama-saka -- Kaffir corn</li>
+				<li>gu-sakara (ye) -- to put on a roof</li>
+				<li>i-sake -- rooster</li>
+				<li>igi-samba -- basket (deep)</li>
+				<li>gu-sambana (nye) -- to commit adultery</li>
+				<li>gu-sambura (ye) -- tear down, undo</li>
+				<li>gu-sana (nnye) -- to mend, repair, (esp. woven things)</li>
+				<li>i-sandugu -- box, (3rd sing., 5th pl.)</li>
+				<li>gu-sanga (ze) -- to find (e.g. someone at home or a certain condition)</li>
+				<li>gu-sanganira (ye) -- to go to meet</li>
+				<li>gu-sangira (ye) -- to eat together</li>
+				<li>gu-sanzaza (je) -- to scatter</li>
+				<li>gu-sara (ze) -- to lose one's mind</li>
+				<li>umu-saraba (Sw.) -- cross</li>
+				<li>gu-sasa (shashe) -- to spread grass, to prepare a bed</li>
+				<li>i-sasa -- floor tile</li>
+				<li>uru-sato -- skin</li>
+				<li>gu-satura (ye) -- to cut lengthwise</li>
+				<li>gu-saza (shaje) -- to grow old</li>
+				<li>mu-saza -- brother, of girl (1st class)</li>
+				<li>i-sazi -- fly (3rd class)</li>
+				<li>se -- his, her, their father (1st class)</li>
+				<li>ama-se -- cow manure</li>
+				<li>igi-seke -- tall pointed basket</li>
+				<li>gu-semereray (ye) -- to shout, call loudly</li>
+				<li>gu-senga (ze) -- to pray, to worship</li>
+				<li>uru-sengero -- church (building)</li> 
+				<li>gu-senya (shenye) -- to gather wood</li>
+				<li>umu-senyi -- sand</li>
+				<li>gu-seruka (tse) -- to make known</li>
+				<li>gu-sesa (sheshe) -- to empty out</li>
+				<li>gu-sesekara (ye) -- to spill (int.), overflow</li>
+				<li>gu-sezera (ye) -- to bid goodbye, dismiss</li>
+				<li>gu-sezerana (nye) -- to promise</li>
+				<li>umu-sezi -- beggar</li>
+				<li>-sha (or, -shasha) -- new</li> 
+				<li>gu-sha (hiye) -- to cook (int.), ripen, burn</li>
+				<li>gu-shaka (tse) -- to want</li>
+				<li>gu-shakana (nye) -- to lust</li>
+				<li>i-shamba -- forest, brushy place</li>
+				<li>i-shami -- branch</li>
+				<li>i-shano -- poison</li>
+				<li>i-shari -- jealousy</li>
+				<li>umu-shatsi -- hair (of human head) (pl. rare)</li>
+				<li>ishavu -- crossness, irritation, sorrow, ill humor</li>
+				<li>ubu-shaza -- peas</li>
+				<li>ubu-she -- burn</li>
+				<li>i-shengero -- church (people)</li>
+				<li>uru-shi -- palm of hand, pl. slaps</li>
+				<li>gu-shika (tse) -- to arrive</li>
+				<li>gu-shikanira (ye) -- to offer (as sacrifice)</li>
+				<li>i-shikanwa -- offering, gift</li>
+				<li>mu-shiki -- sister of boy (1st cl.)</li>
+				<li>gu-shima (mye) -- to praise, be content with</li>
+				<li>gu-shinga (ze) to drive stake in ground, agree</li>
+				<li>uru-shinge (Sw.) -- needle</li>
+				<li>gu-shira (ze) -- to end, wear out (int.)</li>
+				<li>gu-shira (ze) -- to put</li>
+				<li>gu-sh&#299;ra (riye) -- to take to someone</li>
+				<li>gu-shishikara (ye) -- to persist, strive for</li>
+				<li>umushitsi -- guest, visitor</li>
+				<li>gu-shobora (ye) -- to be able, can</li>
+				<li>ubu-shobozi -- power, abillty</li>
+				<li>i-shoka -- axe</li>
+				<li>gu-shuha (she) -- to be hot, get hot</li>
+				<li>ubu-shuhe -- heat</li>
+				<li>i-shuli -- school</li>
+				<li>umu-shumba -- servant</li>
+				<li>i-shurwe -- flower</li>
+				<li>gu-shusha (hije) -- to heat (tr.)</li>
+				<li>gu-shwabura (ye) -- to harvest</li>
+				<li>si -- is not, are not</li>
+				<li>i-si -- earth (3rd cl.)</li>
+				<li>umu-si -- day</li>
+				<li>gu-siba (vye) -- to be absent</li>
+				<li>gu-siga (ze) -- to forsake, leave</li>
+				<li>gu-s&#299;ga (ze) -- to anoint, rub with medicine</li>
+				<li>gu-sigara (ye) -- to be left</li>
+				<li>igi-sigo -- pain (esp. in stomach)</li>
+				<li>gu-sigura (ye) -- to preach, explain</li>
+				<li>si ko? -- isn't it so?</li>
+				<li>gu-simba (vye) -- to jump</li>
+				<li>igi-simbo -- tall pointed basket</li>
+				<li>gu-sinzira (riye) -- to sleep</li>
+				<li>so -- your father (1st cl.)</li>
+				<li>gu-sobanura (ye) -- to explain, translate, sort out</li>
+				<li>sogokuru -- grandfather (1st cl.)</li>
+				<li>gu-sohoka (tse) -- to go outside</li>
+				<li>i-soko -- market place</li>
+				<li>i-s&#333;ko -- fountain</li>
+				<li>gu-soma (mye) -- to read</li>
+				<li>in-somwa -- letter (of alphabet)</li>
+				<li>i-soni -- shame</li>
+				<li>gu-sonza (shonje) -- to hunger, be hungry</li>
+				<li>ubu-sore -- youth</li>
+				<li>umu-sore -- young man (unmarried) (pl. 1st or 2nd cl.)</li>
+				<li>gu-soroma (mye) -- to gather (food from garden, pick</li>
+				<li>gu-sosa (shoshe) -- to have good flavor</li>
+				<li>umu-sozi -- hill, mountain</li>
+				<li>gu-subira (ye) -- to return (to where one came from), go back, to do again, repeat</li>
+				<li>gu-sub&#299;ra (riye) -- to repeat</li>
+				<li>gu-suka (tse) -- to pour (into something)</li>
+				<li>i-suka -- hoe (3rd c1. sing.; 5th cl. pl.)</li>
+				<li>i-sukari -- sugar</li>
+				<li>gu-sukiranya (nye) -- to add</li>
+				<li>umu-suma (or igisuma) -- thief</li>
+				<li>umu-sumari -- nail, pin</li>
+				<li>gu-sumba (vye) -- to surpass, be taller</li>
+				<li>umu-sumeno -- saw</li>
+				<li>gu-sunika (tse) -- to push</li>
+				<li>gu-suzuma (mye) -- to examine</li>
+				<li>umu-swa -- white ants (no pl.)</li>
+				<li>gu-sya (seye) -- to grind</li>
+				<li>uru-syo -- stone for grinding</li>
+			</ul>
+			<ul id="T" class="ltrUl">T
+				<li>ama-ta -- milk</li>
+				<li>gu-ta (taye) -- to lose, throw away</li>
+				<li>gu-tabara (ye) -- to help, go to assistance of</li>
+				<li>i-tabi -- tobacco</li>
+				<li>igi-tabo -- book</li>
+				<li>gu-tabuka (tse) -- to -tear (int.)</li>
+				<li>gu-tabura (ye) -- to tear (tr.)</li>
+				<li>i-tafari -- brick</li>
+				<li>gu-taha (she) -- to go home, to greet</li>
+				<li>in-tahe -- witness</li>
+				<li>gu-tahura (ye) -- to understand</li>
+				<li>in-tama -- sheep</li>
+				<li>umu-tama -- old man</li>
+				<li>gu-tamba (vye) -- to dance (esp. with music or drums)</li>
+				<li>igi-tambara -- cloth</li>
+				<li>in-tambara -- battle, strife</li>
+				<li>in-tambge -- lion</li>
+				<li>-tandatu -- six</li>
+				<li>gu-tandukanya (nije) -- to separate, distinguish</li>
+				<li>gu-tanga (ze) -- to offer, pay, give</li>
+				<li>gu-tangara (ye ) -- to wonder at, be astonished</li>
+				<li>igi-tangaza -- miracle, marvel</li>
+				<li>gu-tangura (ye ) -- to begin to</li>
+				<li>i-tanguriro -- beginning (noun)</li>
+				<li>-tanu -- five</li>
+				<li>i-tara (Sw.) -- lantern, lamp</li>
+				<li>in-tare -- lion</li>
+				<li>uru-tare -- rocky place, large rock</li>
+				<li>i-tariki -- date (of month)</li>
+				<li>ibi-taro -- dispensary, hospital</li>
+				<li>igi-tarurwa -- bridge</li>
+				<li>gu-tasha (she) -- to send greetings</li> 
+				<li>gu-tata (se) -- to complain, fuss at</li>
+				<li>-tatu -- three</li>
+				<li>gu-tazira (ye) -- to praise</li>
+				<li>-te? -- how?</li>
+				<li>ama-te -- saliva</li>
+				<li>gu-teba (vye) -- to be late, slow</li>
+				<li>in-tebe -- chair, stool</li>
+				<li>gu-tebuka (tse) -- to hurry</li>
+				<li>in-tege -- strength</li>
+				<li>gu-tegeka (tse) -- to command, order</li>
+				<li>gu-tegereza (je) -- to think about, understand</li>
+				<li>umu-tego -- trap</li>
+				<li>gu-tegura (ye ) -- to prepare</li>
+				<li>i-tegura -- tile</li>
+				<li>gu-teka (tse) -- to cook (tr.) (in water)</li>
+				<li>gu-tekereza (je) to be meek, gentle</li>
+				<li>gu-tema (mye) -- to cut (tree, grass)</li>
+				<li>gu-temba (vye) -- to fall down</li>
+				<li>gu-tembera (reye) (Sw.) -- to visit, move about, go for a walk</li>
+				<li>umu-temere -- lid, cover</li>
+				<li>gu-t&#275;ra (ye) -- to throw, plant (see par. 222)</li>
+				<li>gu-terura (ye) -- to carry someone (esp. in litter or Tepoy)</li>
+				<li>-ti -- says, saying (often used as question mark and not translated)</li>
+				<li>igi-ti -- tree, stick</li>
+				<li>umu-ti -- medicine</li>
+				<li>umu-tima -- heart</li>
+				<li>gu-tinya (nye) -- to fear</li>
+				<li>gu-tinyuka (tse) -- to dare, be fearless</li>
+				<li>gu-tira (ze) -- to borrow (something which will be returned itself)</li>
+				<li>i-tiro -- sleep, sleepiness</li>
+				<li>gu-tiza (je) -- to lend (that which will be returned itself)</li>
+				<li>-to (or, -tonya, -to-to, or, -toya) -- small, little, young, thin</li>
+				<li>umu-tobe -- unfermented banana juice</li>
+				<li>in-toboro -- small hole (in anything except ground)</li>
+				<li>in-tofanyi -- white potato</li>
+				<li>igi-toke (or, i) -- banana (bunch, tree)</li>
+				<li>uru-toke -- finger</li>
+				<li>gu-tonda (ze) -- to stand in line</li>
+				<li>igi-tondo -- morning</li>
+				<li>gu-tongana (nye) -- to quarrel</li>
+				<li>i-tongo -- cultivated field, plot of ground</li>
+				<li>umu-toni -- favorite</li>
+				<li>gu-tonora (ye) -- to shell, peel (with fingers), husk</li>
+				<li>gu-tora (ye) -- to choose, pick out, pick up, find</li>
+				<li>-toto -- green, unripe</li>
+				<li>in-tozi -- pincher ants</li>
+				<li>umutsima -- bread</li>
+				<li>gu-tsinda (nze) -- to triumph over, defeat</li>
+				<li>gu-tsitara (ye) -- to stub one's toe, stumble</li>
+				<li>igi-tugu -- shoulder</li>
+				<li>gu-tuka (tse) -- to slander, revile, rail at</li>
+				<li>gu-tuma (mye) -- to send</li>
+				<li>ubu-tumwa -- message (with bgiza, used for gospel)</li>
+				<li>gu-tunga (nze) -- to possess, be rich</li>
+				<li>gu-tungana (nye) -- to be perfect</li>
+				<li>ubu-tunzi -- riches, wealth, possessions</li>
+				<li>umu-tunzi -- rich man</li>
+				<li>gu-tura (ye) -- to put down a load, offer a gift</li>
+				<li>umu-turagaro -- thunder (noise)</li>
+				<li>gu-turira (ye) -- to set fire to, burn</li>
+				<li>i-turo -- offering, present</li>
+				<li>gu-turuka (tse ) -- to come from</li>
+				<li>umu-tutsi -- member of pastoral class of Barundi or Banyarwanda</li>
+				<li>igi-tutu -- shade, shadow</li>
+				<li>umu-twa -- pygmy, member of lowest class</li>
+				<li>gu-twara (ye) -- to take away, carry</li>
+				<li>umu-twaro -- burden, load</li>
+				<li>umu-twe -- head</li>
+				<li>twebge -- we, us</li>
+				<li>gu-twenga (nze) -- to laugh, laugh at</li>
+				<li>umu-twenzi -- dawn</li>
+				<li>ugu-twi -- ear</li>
+			</ul>
+			<ul id="U" class="ltrUl">U
+				<li>kw-ubaha (she) -- to reverence, respect, honor</li>
+				<li>ic-ubahiro -- reverence,respect</li>
+				<li>kw-ubaka (tse) -- to build</li>
+				<li>umw-ubatsi -- builder</li>
+				<li>ubu -- now</li>
+				<li>ubusa -- (see under -sa)</li>
+				<li>kw-ugara (ye) -- to close (as door)</li>
+				<li>kw-ugurura (ye) -- to open (as door)</li> 
+				<li>kw-uma (mye) -- to dry</li>
+				<li>ic-uma -- metal, tool</li>
+				<li>in-uma -- dove, pigeon</li>
+				<li>ic-umba -- room, (in house)</li>
+				<li>umw-umbati -- manioc, cassava</li>
+				<li>kw-umva (vise) -- to hear, smell, taste, feel</li>
+				<li>kw-umvira (ye) -- to obey</li>
+				<li>kw-umviriza (je) -- to listen, listen to</li>
+				<li>kw-unama (mye) -- to stoop down</li>
+				<li>umw-ungere -- shepherd</li> 
+				<li>umw-ungu -- pumpkin, squash</li>
+				<li>kw-unguka (tse) -- to gain, increase</li>
+				<li>kw-urira (ye) -- to climb (as tree)</li>
+				<li>kw-ururuka (tse) -- to climb down (as tree)</li>
+				<li>ic-uya -- perspiration</li>
+				<li>umw-uzukuru -- grandchild</li>
+				<li>kw-uzura (ye) -- to be full</li>
+				<li>kw-uzuza (ujuje) -- to fill</li>
+			</ul>
+			<ul id="V" class="ltrUl">V
+				<li>ku-va (vuye) -- to come from, come away from</li>
+				<li>ku-vanga (nze) -- to mix, stir</li>
+				<li>i-vi -- knee (5th cl.)</li>
+				<li>ku-voma (mye) -- to bring water (from source)</li>
+				<li>i-vu -- soil, earth (5th cl.)</li>
+				<li>vuba -- soon, recently, quickly</li>
+				<li>ku-vubga (passive of kuva ) -- to be bereaved</li>
+				<li>ku-vuga (ze) -- to say, speak</li>
+				<li>ku-vuka (tse) -- to be born</li>
+				<li>ku-vuna (nnye) -- to break (as bone,) stick, anything slender) (tr.)</li>
+				<li>ku-vunika (tse) -- to break (bone, etc.) (int.)</li>
+				<li>im-vunja -- jigger</li>
+				<li>ku-vunja (nje) -- to change money</li>
+				<li>im-vura -- rain</li>
+				<li>ku-vura (ye) -- to treat, doctor</li>
+				<li>i-vuriro (5th) -- dispensary, hospital</li>
+				<li>ama-vuta -- butter, oil</li>
+				<li>ku-vyara (ye) -- to give birth to</li>
+				<li>umu-vyeyi -- parent</li>
+				<li>ku-vyibuha (she) -- to be fat</li>
+				<li>ku-vyimba (mvye ) -- to swell</li>
+				<li>ku-vyuka (tse) -- to arise, get up from bed or ground</li>
+			</ul>
+			<ul id="W" class="ltrUl">W
+				<li>aka-wa -- coffee (or, agahawa)</li>
+				<li>we -- he, she, him, her</li>
+				<li>wewe -- you (s.)</li>
+			</ul>
+			<ul id="Y" class="ltrUl">Y
+				<li>aka-yabo (or, u) -- cat (pl. ubuyabo)</li>
+				<li>ku-yaga (ze) -- to melt (as butter)</li>
+				<li>ku-yaga (ze) -- to chat, talk, visit</li>
+				<li>iki-yaga -- lake, sea, ocean</li>
+				<li>umu-yaga -- wind</li>
+				<li>in-yama -- meat, flesh</li>
+				<li>yamara -- but, however</li>
+				<li>in-yana -- calf</li>
+				<li>in-yanduruko -- origin, source, reason</li>
+				<li>in-yanya -- tomato</li>
+				<li>iki-yara -- white potato</li>
+				<li>in-yenzi -- cockroach</li>
+				<li>uru-yige -- locust</li>
+				<li>aka-yiko -- teaspoon</li>
+				<li>iki-yiko -- spoon</li>
+				<li>i-yinga -- week (5th)</li>
+				<li>iki-yoba -- peanut, ground nut</li>
+				<li>ku-yoberwa (bewe) -- to be mistaken, not known</li>
+				<li>ku-yobora (ye) -- to lead</li>
+				<li>in-yondwi -- tick</li>
+				<li>ku-yonga (nze) -- to melt (as sugar)</li>
+				<li>in-yoni -- little bird</li>
+				<li>in-yonko -- fever, malaria</li>
+				<li>in-yota -- thirst</li>
+				<li>uru-yoya -- tiny baby (up to 1 month)</li>
+				<li>uru-yuki -- bee</li>
+				<li>yuko -- that (conj.), because</li>
+				<li>in-yuma -- behind, after</li>
+				<li>in-yundo -- hammer</li>
+				<li>in-yungu -- profit, gain</li>
+			</ul>
+			<ul id="Z" class="ltrUl">Z
+				<li>ku-za (je) -- to come</li>
+				<li>in-zamba -- horn, trumpet</li>
+				<li>ku-zana (nye) -- to bring</li>
+				<li>in-zara -- hunger</li>
+				<li>-zi -- know (has no infinitive)</li>
+				<li>aka-zi (Sw.) -- work, task</li>
+				<li>ama-zi -- water</li>
+				<li>umu-zi -- root</li>
+				<li>uru-zi -- river</li>
+				<li>ku-zibiza (je) -- to silence</li>
+				<li>ku-zigama (mye) -- to protect, take care of, watch over</li>
+				<li>in-zigo -- grudge, desire to revenge</li>
+				<li>i-ziko -- fireplace (three stones Africans use on which to make fire), stove</li>
+				<li>-zima -- alive, unbroken, living</li>
+				<li>ku-zima (mye ) -- to be extinguished, go out (of fire)</li>
+				<li>ku-zimira (ye) -- to be lost (of person losing his way)</li>
+				<li>ku-zimya (mije) -- to put out (fire)</li>
+				<li>i-zina -- name</li>
+				<li>ku-zinduka (tse ) -- to get up early</li>
+				<li>ku-zinga (nze) -- to fold</li>
+				<li>in-zira -- path, way, road</li>
+				<li>in-zoga -- beer</li>
+				<li>in-zoka -- snake, worm</li>
+				<li>i-zosi -- neck</li>
+				<li>in-zozi -- dream</li>
+				<li>in-zu -- house, room</li>
+				<li>i-zuba -- sun</li>
+				<li>ku-zuka (tse) -- to come to life, resurrect (int.)</li>
+				<li>umu-zungu -- white person, European</li>
+				<li>i-zuru -- nose, nostril</li>
+			</ul>
+		</section>    
+	
+</body>
+</html>	
