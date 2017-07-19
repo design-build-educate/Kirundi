@@ -1,0 +1,2142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Index</title>
+	<script>
+		var parToLsnNm = new Array();
+		parToLsnNm[1] = [-1,1,1,2,2,3,3,4,4,5,5,5,6,7,7,8,9,11,11,12,13,13,14,15,15,15,16,16,17,17,18,18,18,19,19,19];
+		parToLsnNm[2] = [-1,21,22,22,23,23,23,24,24,25,25,26,26,26,26,27,27,27,27,28,28,28,29,29,29,31,31,32,32,32,33,33,33,34,35,35,35,36,36,36,37,37,37,37,38,38,39,39,39];
+		parToLsnNm[3] = [-1,41,41,41,41,41,42,42,42,43,-1,44,44,45,45,45,46,47,47,47,48,48,51,51,52,52,53,54,54,55,55,56,56,57,57,57,58,59,59];
+		parToLsnNm[4] = [-1,61,61,61,61,62,62,62,63,64,65,66,66,66,67,67,68,68,69,69,69,71,72,72,72,72,73,74,74,75,75,75,76,76,76,78,78,78,79,80,80,80];
+		parToLsnNm[5] = [-1,82,83,83,83,84,84,85,85,85,86,86,86,86,86,87,87,88,88,88,88,89,91,91,91,91,92,92,93,93,94,94,95,95,95,96,97,97,98,98,98,99,99];
+		parToLsnNm[6] = [-1,102,102,102,103,103,103,104,104,104,105,105,105,106,106,106,107,107,107,108,108,109];
+		parToLsnNm[7] = [-1,111,111,111,112,113,114,114,115,115,115,115,116,116,116,117,118,118,118,119,119,120,120,120,120,121,121,122,123,124];
+		var indxDsp = "A";
+		$("#indxBtnA").css({"font-weight":"bold","background-color":"#aaa"});
+		var untNm = -1;
+	
+		function goToRls(evt){
+			
+		};// end fct goToRls(evt)
+		
+		function goToLsns(evt){
+			var btnId = evt.target.value;
+			var lsnNm="";
+			var parNm = "";
+			var ntNm=-1;
+			var lstNm = -1;
+			var parNtNm = -1;
+			if (btnId.charAt(0)=="L") {
+				parNm=-1; // this is a lesson so no paragraph(ie parNm=-1)
+				lsnNm = getNmb(btnId,3);
+				if (lsnNm==NaN) {alert("Lesson # is NaN");return;};// catch possible error - so return(eg do nothing)
+				untNm = getUntNm(lsnNm);// get unit # from the lesson #
+				// now get next char: if nxtChr = "V"then (get note # ) else [no note(eg lesson only)] set ntNm= -1
+				if (btnId.charAt(3+lsnNm.length)== "V"){// true means there is a note(_,1,2) after Vocab section
+					if (btnId.length>8+lsnNm.length) {//now get the note #
+						ntNm = btnId.charAt(8+lsnNm.length); //the # after "VocNt"
+						}// end of if then for note #
+						else{
+							ntNm= 0; // When there is no # after "VocNt" set this number to 0
+						};//end if then else for note #
+					} // end of if then for "V"
+				} // end of "L" if then
+				else{ // no les so get paragraph data
+					parNm = getNmb(btnId,0);
+					lsnNm = getLsnNmb(parNm); // get lsnNm from parNm
+					if (lsnNm==NaN) {alert("Lesson # is NaN");return;};// catch possible error - so return(eg do nothing)
+					untNm = getUntNm(lsnNm);// get untNm from lsnNm
+					// now check for data following the para # if any
+					if (btnId.charAt(parNm.length)=="L") {// if true then get the list #
+							lstNm = btnId.charAt(parNm.length+3);
+					};
+					if (btnId.charAt(parNm.length)=="N") {// if true then get the note #
+						if (btnId.length>parNm.length+2) {//now get the note #
+							parNtNm = btnId.charAt(parNm.length+2); //the # after "VocNt"
+							}// end of if then for note #
+							else{
+								parNtNm= 0; // When there is no # after "VocNt" set this number to 0
+							};//end if then else for note #
+					};// end of if "N"
+					
+			}; // end of "L" if then else
+			selILRVIfrmId("lsnBtnId");
+			getUntFrmId(untNm);
+			getLsnFrmId(lsnNm);
+			if (parNm !== -1) {// if there is a parNmb(ie parNm is not = to -1)
+				if (parNtNm==-1) {// scroll to paragraph # (not note)
+					alert(parNm);
+					$("#lsnCntr"+lsnNm).css({"backgroundColor":"#f00"});
+					$("#cnt0").scrollTop(600);
+				} 
+				else{// must scroll to note #
+					$("#lsnCntr"+lsnNm).scrollTop(200);
+				};// end of if then else
+			};// end of if(parNm!==-1)
+			
+//			alert("unt# "+untNm+"   l# "+lsnNm+"  nt# "+ntNm+"  p# "+parNm+"   lstNm = "+lstNm+ "    parNtNm "+parNtNm);	
+		}; // end of fct goToLsns()
+		
+		function dspLtr(evt){
+			$("#sec"+indxDsp).css({"display":"none"});
+			$("#indxBtn"+indxDsp).css({"font-weight":"normal","backgroundColor":"#ddd"});
+			indxDsp = evt.target.value.charAt(0);
+			$("#sec"+indxDsp).css({"display":"block"});
+			$("#indxBtn"+indxDsp).css({"font-weight":"bold","backgroundColor":"#aaa"});
+		};// end fct dspLtr(evt)
+		
+		function getUntNm(lessNmb){
+			var unt;
+			if (lessNmb<21) {unt = 1;} 
+				else{if (lessNmb<41) {unt = 2;} 
+				else{if (lessNmb<61) {unt = 3;} 
+				else{if (lessNmb<82) {unt = 4;} 
+				else{if (lessNmb<101) {unt = 5;} 
+				else{if (lessNmb<111) {unt = 6;} 
+				else{unt = 7;};};};};};
+			 };// end of all 6 of the "if then else" statements
+			 return (unt); 	
+		};// end of fct getUntNm(lessNmb)
+		
+		function getLsnNmb(parNmb){
+			var lsn;
+			if (parNmb<36) {lsn = parToLsnNm[1][parNmb];} 
+				else{if (parNmb<84) {lsn = parToLsnNm[2][parNmb-35];} 
+				else{if (parNmb<122) {lsn = parToLsnNm[3][parNmb-83];} 
+				else{if (parNmb<163) {lsn = parToLsnNm[4][parNmb-121];} 
+				else{if (parNmb<205) {lsn = parToLsnNm[5][parNmb-162];}
+				else{if (parNmb<226) {lsn = parToLsnNm[6][parNmb-204];} 
+				else{lsn=parToLsnNm[7][parNmb-225];};};};};};
+			}; // end of all 6 of the "if then else" statements
+			return (lsn);
+		}; // end of fct getLsnNmb(parNmb)
+		
+		// this function getNmb(aStrng,locFrstDgt) will return a number(as a string) 
+		//		which is embedded in a string(parameter:aStrng)
+		//      parameter locFrstDgt is the location of the first didgit of the number
+		//	Note: if the first char is not a number(0-9) this fct returns NaN
+		function getNmb(aStrng,locFrstDgt){
+			var nmb=""; // initially set to NAN which will be returned if 1st char is not a number(0-9)
+			var i = locFrstDgt;
+			var chr = aStrng.charAt(i);//get the first char
+			while (chr>="0" && chr<="9"){
+				nmb +=  chr;
+				i++;
+				chr = aStrng.charAt(i);
+			}; // end while
+			if (nmb.length = 0){
+				return (NaN);
+				}
+				else{
+					return (nmb);
+			};// end if
+		}; // end of fct getNmb(aStrng,locFrstDgt)				  
+		
+	</script>
+	<style>
+		.indxSec{
+			display: none;
+		}
+		.index li{
+			font-weight: bold;
+		}
+		#indxA{
+		}
+	</style>
+</head>
+
+<body>
+	<input id="indxBtnA" type="button" value="A" onclick="dspLtr(event)" />
+	<input id="indxBtnB" type="button" value="B" onclick="dspLtr(event)" />
+	<input id="indxBtnC" type="button" value="C" onclick="dspLtr(event)" />	
+	<input id="indxBtnD" type="button" value="D" onclick="dspLtr(event)" />		
+	<input id="indxBtnE" type="button" value="E,F,G" onclick="dspLtr(event)" />			
+	<input id="indxBtnH" type="button" value="H" onclick="dspLtr(event)" />			
+	<input id="indxBtnI" type="button" value="I" onclick="dspLtr(event)" />
+	<input id="indxBtnJ" type="button" value="J,K,L,M" onclick="dspLtr(event)" />
+	<input id="indxBtnN" type="button" value="N" onclick="dspLtr(event)" />	
+	<input id="indxBtnO" type="button" value="O" onclick="dspLtr(event)" />		
+	<input id="indxBtnP" type="button" value="P" onclick="dspLtr(event)" />			
+	<input id="indxBtnQ" type="button" value="Q,R" onclick="dspLtr(event)" />			
+	<input id="indxBtnS" type="button" value="S" onclick="dspLtr(event)" />
+	<input id="indxBtnT" type="button" value="T,U" onclick="dspLtr(event)" />
+	<input id="indxBtnV" type="button" value="V,W,Y,Z" onclick="dspLtr(event)" />	
+
+	<section class="index">
+		<header>
+			<h2><u>INDEX</u></h2>
+			<h4>Numbers refer to paragraphs unless otherwose indicated. A number like this:
+				67:a, refers to the note following paragraph 67, or 100:2, means section 2
+				of paragraph 100.</h4>	
+		</header>
+		<section id="secA">A
+			<ol type="1">
+				<li>Adjectives (chart)
+					<input type="button" value="99" onclick="goToLsns(event)" />
+					<ol type="a">
+						<li>Agreement of
+							<input type="button" value="5" onclick="goToLsns(event)"/>
+							<input type="button" value="15" onclick="goToLsns(event)"/>
+							<input type="button" value="76" onclick="goToLsns(event)"/>
+							<input type="button" value="79" onclick="goToLsns(event)"/>
+						</li>
+						<li>Demonstrative
+							<input type="button" value="172" onclick="goToLsns(event)"/>
+							<input type="button" value="173" onclick="goToLsns(event)"/>
+							<input type="button" value="174" onclick="goToLsns(event)"/>
+							<input type="button" value="175" onclick="goToLsns(event)"/>
+							<input type="button" value="176" onclick="goToLsns(event)"/>
+							<input type="button" value="177" onclick="goToLsns(event)"/>
+							<input type="button" value="178" onclick="goToLsns(event)"/>
+							<input type="button" value="179" onclick="goToLsns(event)"/>
+							<input type="button" value="180" onclick="goToLsns(event)"/>	
+						</li>
+						<li>Descriptive<input type="button" value="15" onclick="goToLsns(event)"/>
+							<input type="button" value="16" onclick="goToLsns(event)"/>
+							<input type="button" value="20" onclick="goToLsns(event)"/>
+							<input type="button" value="22Lst2" onclick="goToLsns(event)"/>
+							<input type="button" value="30" onclick="goToLsns(event)"/>
+							<input type="button" value="39" onclick="goToLsns(event)"/>
+							<input type="button" value="46" onclick="goToLsns(event)"/>
+							<input type="button" value="50" onclick="goToLsns(event)"/>
+							<input type="button" value="62" onclick="goToLsns(event)"/>
+							<input type="button" value="65" onclick="goToLsns(event)"/>
+							<input type="button" value="68" onclick="goToLsns(event)"/>
+							<input type="button" value="99" onclick="goToLsns(event)"/>
+							<input type="button" value="100Lst4" onclick="goToLsns(event)"/>
+							<input type="button" value="229" onclick="goToLsns(event)"/>
+						</li>
+						<li>Expressed by nouns
+							<input type="button" value="246" onclick="goToLsns(event)"/>
+							<input type="button" value="247" onclick="goToLsns(event)"/>
+						</li>
+						<li>Expressed by verbs
+							<input type="button" value="229" onclick="goToLsns(event)"/>
+						</li>
+						<li>Numeral
+							<input type="button" value="75" onclick="goToLsns(event)"/>
+							<input type="button" value="76" onclick="goToLsns(event)"/>
+							<input type="button" value="77" onclick="goToLsns(event)"/>
+							<input type="button" value="78" onclick="goToLsns(event)"/>
+							<input type="button" value="79" onclick="goToLsns(event)"/>
+							<input type="button" value="80" onclick="goToLsns(event)"/>
+							<input type="button" value="99" onclick="goToLsns(event)"/>
+							<input type="button" value="100Lst6" onclick="goToLsns(event)"/>
+						</li>
+						<li>Position of
+							<input type="button" value="100" onclick="goToLsns(event)"/>
+						</li>
+						<li>Possessive
+							<input type="button" value="5" onclick="goToLsns(event)"/>
+							<input type="button" value="7" onclick="goToLsns(event)"/>
+							<input type="button" value="13" onclick="goToLsns(event)"/>
+							<input type="button" value="18" onclick="goToLsns(event)"/>
+							<input type="button" value="20" onclick="goToLsns(event)"/>
+							<input type="button" value="30" onclick="goToLsns(event)"/>
+							<input type="button" value="39" onclick="goToLsns(event)"/>
+							<input type="button" value="46" onclick="goToLsns(event)"/>
+							<input type="button" value="05" onclick="goToLsns(event)"/>
+							<input type="button" value="62" onclick="goToLsns(event)"/>
+							<input type="button" value="65" onclick="goToLsns(event)"/>
+							<input type="button" value="68" onclick="goToLsns(event)"/>
+							<input type="button" value="99" onclick="goToLsns(event)"/>
+							<input type="button" value="100Lst1" onclick="goToLsns(event)"/>
+							<input type="button" value="153" onclick="goToLsns(event)"/>
+							<input type="button" value="154" onclick="goToLsns(event)"/>
+							<input type="button" value="155" onclick="goToLsns(event)"/>
+						</li>
+						<li>Quantity
+							<input type="button" value="101" onclick="goToLsns(event)"/>
+						</li>
+					</ol>
+				</li>
+				<li>Adverbs
+					<input type="button" value="241" onclick="goToLsns(event)"/>
+					<input type="button" value="242" onclick="goToLsns(event)"/>
+					<input type="button" value="244" onclick="goToLsns(event)"/>
+					<input type="button" value="245" onclick="goToLsns(event)"/>
+					<ol type="a">
+						<li>Manner
+							<input type="button" value="241" onclick="goToLsns(event)"/>
+						</li>
+						<li>Miscellaneous
+							<input type="button" value="245" onclick="goToLsns(event)"/>
+						</li>
+						<li>Numeral
+							<input type="button" value="124" onclick="goToLsns(event)"/>
+						</li>
+						<li>Place
+							<input type="button" value="242" onclick="goToLsns(event)"/>
+						</li>
+						<li>Position of
+							<input type="button" value="102" onclick="goToLsns(event)"/>
+						</li>
+						<li>Time
+							<input type="button" value="244" onclick="goToLsns(event)"/>
+						</li>
+					</ol>
+				</li>
+				<li>Agreement
+					<ol type="a">
+						<li>Chart
+							<input type="button" value="68" onclick="goToLsns(event)"/>
+						</li>
+						<li>Compound Subject
+							<input type="button" value="23" onclick="goToLsns(event)"/>
+						</li>
+						<li>Descriptive adjective
+							<input type="button" value="15" onclick="goToLsns(event)"/>
+						</li>
+						<li>-he
+							<input type="button" value="99" onclick="goToLsns(event)"/>
+							<input type="button" value="198" onclick="goToLsns(event)"/>
+							<input type="button" value="199" onclick="goToLsns(event)"/>
+						</li>
+						<li>Numeral adjective
+							<input type="button" value="76" onclick="goToLsns(event)"/>
+							<input type="button" value="79" onclick="goToLsns(event)"/>
+						</li>
+						<li>Object pronouns
+							<input type="button" value="119" onclick="goToLsns(event)"/>
+						</li>
+						<li>Possessive adjective
+							<input type="button" value="5" onclick="goToLsns(event)"/>
+						</li>
+						<li>-te
+							<input type="button" value="223" onclick="goToLsns(event)"/>
+						</li>
+						<li>Verb and class
+							<input type="button" value="19" onclick="goToLsns(event)"/>
+						</li>
+					</ol>
+				</li>
+				<li>A I U rule
+					<input type="button" value="157" onclick="goToLsns(event)"/>
+					<input type="button" value="200" onclick="goToLsns(event)"/>
+				</li>
+				<li>"all"
+					<input type="button" value="84" onclick="goToLsns(event)"/>
+					<input type="button" value="85" onclick="goToLsns(event)"/>
+					<input type="button" value="86" onclick="goToLsns(event)"/>
+					<input type="button" value="87" onclick="goToLsns(event)"/>
+					<input type="button" value="99" onclick="goToLsns(event)"/>
+					<input type="button" value="100Lst5" onclick="goToLsns(event)"/>
+				</li>
+				<li>-amura
+					<input type="button" value="Les89VocNt1" onclick="goToLsns(event)"/>
+				</li>
+				<li>(umw)anya
+					<input type="button" value="182" onclick="goToLsns(event)"/>
+				</li>
+				<li>"anyone"
+					<input type="button" value="212" onclick="goToLsns(event)"/>
+				</li>
+				<li>ariko
+					<input type="button" value="83" onclick="goToLsns(event)"/>
+				</li>
+				<li>Article
+					<input type="button" value="2Nt2" onclick="goToLsns(event)"/>
+				</li>
+				<li>"to ask"
+					<input type="button" value="95" onclick="goToLsns(event)"/>
+				</li>
+				<li>Associative verbs
+					<input type="button" value="219" onclick="goToLsns(event)"/>
+					<input type="button" value="220" onclick="goToLsns(event)"/>
+					<input type="button" value="221" onclick="goToLsns(event)"/>
+				</li>
+			</ol>
+		</section>  <!-- end of secA  -->
+		<section id="secB" class="indxSec">B
+			<ol>
+				<li>-banza
+					<input type="button" value="61" onclick="goToLsns(event)"/>
+				</li>
+				<li>-baza
+					<input type="button" value="95" onclick="goToLsns(event)"/>
+				</li>
+				<li>"to be"
+					<ol type="a">
+						<li>-ba
+							<input type="button" value="19" onclick="goToLsns(event)"/>
+						</li>
+						<li>ni and si
+							<input type="button" value="4" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ri present
+							<input type="button" value="19" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ri present negative
+							<input type="button" value="29" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ri past
+							<input type="button" value="114" onclick="goToLsns(event)"/>
+							<input type="button" value="115" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ri after kuko, etc.
+							<input type="button" value="185" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ri dependent negative
+							<input type="button" value="187" onclick="goToLsns(event)"/>
+						</li>
+					</ol>
+				</li>
+				<li>"before"
+					<input type="button" value="189" onclick="goToLsns(event)"/>
+				</li>
+				<li>"begin"
+					<input type="button" value="61" onclick="goToLsns(event)"/>
+				</li>
+				<li>"-besha"
+					<input type="button" value="Les58VocNt" onclick="goToLsns(event)"/>
+				</li>
+				<li>"both"
+					<input type="button" value="125" onclick="goToLsns(event)"/>
+				</li>
+				<li>"break"
+					<input type="button" value="Les122VocNt2" onclick="goToLsns(event)"/>
+				</li>
+				<li>"brother"
+					<input type="button" value="148" onclick="goToLsns(event)"/>
+					<input type="button" value="149" onclick="goToLsns(event)"/>
+				</li>
+				<li>-bura
+					<input type="button" value="181" onclick="goToLsns(event)"/>
+				</li>
+				<li>"but"
+					<input type="button" value="83" onclick="goToLsns(event)"/>
+				</li>
+				<li>-buza
+					<input type="button" value="136" onclick="goToLsns(event)"/>
+				</li>
+			</ol>
+		</section>  <!-- end of secB  -->
+		<section id="secC" class="indxSec">C
+			<ol>
+				<li>"call"
+					<input type="button" value="166" onclick="goToLsns(event)"/>
+				</li>
+				<li>Cardianl numbers
+					<input type="button" value="75" onclick="goToLsns(event)"/>
+					<input type="button" value="76" onclick="goToLsns(event)"/>
+					<input type="button" value="77" onclick="goToLsns(event)"/>
+					<input type="button" value="78" onclick="goToLsns(event)"/>
+					<input type="button" value="79" onclick="goToLsns(event)"/>
+					<input type="button" value="80" onclick="goToLsns(event)"/>
+					<input type="button" value="99" onclick="goToLsns(event)"/>
+					<input type="button" value="100Lst6" onclick="goToLsns(event)"/>
+				</li>
+				<li>Causative
+					<input type="button" value="156" onclick="goToLsns(event)"/>
+					<input type="button" value="157" onclick="goToLsns(event)"/>
+					<input type="button" value="158" onclick="goToLsns(event)"/>
+					<input type="button" value="159" onclick="goToLsns(event)"/>
+					<input type="button" value="160" onclick="goToLsns(event)"/>
+					<input type="button" value="161" onclick="goToLsns(event)"/>
+					<input type="button" value="162" onclick="goToLsns(event)"/>
+					<input type="button" value="201" onclick="goToLsns(event)"/>
+					<ol type="a">
+						<li>Objects with
+							<input type="button" value="160" onclick="goToLsns(event)"/>
+							<input type="button" value="161" onclick="goToLsns(event)"/>
+							<input type="button" value="162" onclick="goToLsns(event)"/>
+						</li>
+						<li>Past of
+							<input type="button" value="158" onclick="goToLsns(event)"/>
+						</li>
+					</ol>
+				</li>
+				<li>Change-down rule
+					<input type="button" value="21" onclick="goToLsns(event)"/>
+					<input type="button" value="117Nt" onclick="goToLsns(event)"/>
+					<input type="button" value="186Lst1" onclick="goToLsns(event)"/>
+					<input type="button" value="231" onclick="goToLsns(event)"/>
+				</li>
+				<li>Charts:
+					<ol type="a">
+						<li>Adjectives
+							<input type="button" value="99" onclick="goToLsns(event)"/>
+						</li>
+						<li>Classes
+							<input type="button" value="68" onclick="goToLsns(event)"/>
+						</li>
+						<li>Demonstrative adjectives
+							<input type="button" value="Les86" onclick="goToLsns(event)"/>
+						</li>
+						<li>Possessive adjective
+							<input type="button" value="Les76" onclick="goToLsns(event)"/>
+						</li>
+						<li>Verb tenses
+							<input type="button" value="252" onclick="goToLsns(event)"/>
+						</li>
+					</ol>
+				</li>
+				<li>Classes of nouns
+					<ol type="a">
+						<li>Class 1
+							<input type="button" value="2" onclick="goToLsns(event)"/>
+						</li>
+						<li>Class 2
+							<input type="button" value="7" onclick="goToLsns(event)"/>
+						</li>
+						<li>Class 3
+							<input type="button" value="13" onclick="goToLsns(event)"/>
+							<input type="button" value="17" onclick="goToLsns(event)"/>
+						</li>
+						<li>Class 4
+							<input type="button" value="20" onclick="goToLsns(event)"/>
+							<input type="button" value="21" onclick="goToLsns(event)"/>
+							<input type="button" value="22" onclick="goToLsns(event)"/>
+							<input type="button" value="23" onclick="goToLsns(event)"/>
+							<input type="button" value="24" onclick="goToLsns(event)"/>
+							<input type="button" value="25" onclick="goToLsns(event)"/>
+						</li>
+						<li>Class 5
+							<input type="button" value="30" onclick="goToLsns(event)"/>
+							<input type="button" value="31" onclick="goToLsns(event)"/>
+							<input type="button" value="32" onclick="goToLsns(event)"/>
+							<input type="button" value="33" onclick="goToLsns(event)"/>
+							<input type="button" value="34" onclick="goToLsns(event)"/>
+						</li>
+						<li>Class 6
+							<input type="button" value="39" onclick="goToLsns(event)"/>
+							<input type="button" value="40" onclick="goToLsns(event)"/>
+							<input type="button" value="41" onclick="goToLsns(event)"/>
+							<input type="button" value="42" onclick="goToLsns(event)"/>
+							<input type="button" value="43" onclick="goToLsns(event)"/>
+						</li>
+						<li>Class 7
+							<input type="button" value="46" onclick="goToLsns(event)"/>
+							<input type="button" value="47" onclick="goToLsns(event)"/>
+							<input type="button" value="48" onclick="goToLsns(event)"/>
+							<input type="button" value="49" onclick="goToLsns(event)"/>
+						</li>
+						<li>Class 8
+							<input type="button" value="50" onclick="goToLsns(event)"/>
+							<input type="button" value="51" onclick="goToLsns(event)"/>
+							<input type="button" value="52" onclick="goToLsns(event)"/>
+							<input type="button" value="53" onclick="goToLsns(event)"/>
+							<input type="button" value="54" onclick="goToLsns(event)"/>
+							<input type="button" value="55" onclick="goToLsns(event)"/>
+						</li>
+						<li>Class 9
+							<input type="button" value="62" onclick="goToLsns(event)"/>
+							<input type="button" value="63" onclick="goToLsns(event)"/>
+							<input type="button" value="64" onclick="goToLsns(event)"/>
+						</li>
+						<li>Class 10
+							<input type="button" value="65" onclick="goToLsns(event)"/>
+							<input type="button" value="66" onclick="goToLsns(event)"/>
+							<input type="button" value="67" onclick="goToLsns(event)"/>
+						</li>
+						<li>Summary
+							<input type="button" value="68" onclick="goToLsns(event)"/>
+						</li>
+						<li>Classes, object pronouns
+							<input type="button" value="119" onclick="goToLsns(event)"/>
+						</li>
+					</ol>
+				</li>
+				<li>"come" imperative
+					<input type="button" value="56" onclick="goToLsns(event)"/>
+				</li>
+				<li>Comparison
+					<input type="button" value="224" onclick="goToLsns(event)"/>
+				</li>
+				<li>Compound subject
+					<input type="button" value="23" onclick="goToLsns(event)"/>
+				</li>
+				<li>Conditional
+					<input type="button" value="228" onclick="goToLsns(event)"/>
+					<input type="button" value="252" onclick="goToLsns(event)"/>
+				</li>
+				<li>Conjugation of verbs
+					<ol type="a">
+						<li>Conditional
+							<input type="button" value="228" onclick="goToLsns(event)"/>
+							<input type="button" value="252" onclick="goToLsns(event)"/>
+						</li>
+						<li>Dependent negative
+							<input type="button" value="186" onclick="goToLsns(event)"/>
+						</li>
+						<li>Far future
+							<input type="button" value="57" onclick="goToLsns(event)"/>
+						</li>
+						<li>Far future negative
+							<input type="button" value="60" onclick="goToLsns(event)"/>
+						</li>
+						<li>Far future vowel-stems
+							<input type="button" value="72" onclick="goToLsns(event)"/>
+						</li>
+						<li>Far future vowel-stems negative
+							<input type="button" value="73" onclick="goToLsns(event)"/>
+						</li>
+						<li>Far past
+							<input type="button" value="142" onclick="goToLsns(event)"/>
+						</li>
+						<li>Far past negative
+							<input type="button" value="143" onclick="goToLsns(event)"/>
+						</li>
+						<li>Immediate past
+							<input type="button" value="150" onclick="goToLsns(event)"/>
+						</li>
+						<li>Ordinary past
+							<input type="button" value="105" onclick="goToLsns(event)"/>
+						</li>
+						<li>Ordinary past negative
+							<input type="button" value="112" onclick="goToLsns(event)"/>
+						</li>
+						<li>Ordinary past vowel-stems
+							<input type="button" value="109" onclick="goToLsns(event)"/>
+						</li>
+						<li>Prefixless present
+							<input type="button" value="44" onclick="goToLsns(event)"/>
+						</li>
+						<li>Prefixless presnet vowel-stems
+							<input type="button" value="70" onclick="goToLsns(event)"/>
+						</li>
+						<li>Present negative
+							<input type="button" value="28" onclick="goToLsns(event)"/>
+						</li>
+						<li>Present negative vowel-stems
+							<input type="button" value="74" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ra- present
+							<input type="button" value="26" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ra- present vowel-stems
+							<input type="button" value="70" onclick="goToLsns(event)"/>
+						</li>
+						<li>-raca-
+							<input type="button" value="243" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ri, present
+							<input type="button" value="19" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ri, present negative
+							<input type="button" value="29" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ri, ordinary past
+							<input type="button" value="114" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ri, ordinary past negative
+							<input type="button" value="115" onclick="goToLsns(event)"/>
+						</li>
+						<li>Stative voice
+							<input type="button" value="130" onclick="goToLsns(event)"/>
+						</li>
+					</ol>
+				</li>
+				<li>Conjunctions
+					<ol type="a">
+						<li>ariko
+							<input type="button" value="252" onclick="goToLsns(event)"/>
+						</li>
+						<li>kuko, yuko, ko
+							<input type="button" value="53Nt" onclick="goToLsns(event)"/>
+							<input type="button" value="185" onclick="goToLsns(event)"/>
+						</li>
+						<li>na
+							<input type="button" value="8" onclick="goToLsns(event)"/>
+							<input type="button" value="139" onclick="goToLsns(event)"/>
+							<input type="button" value="165" onclick="goToLsns(event)"/>
+							<input type="button" value="211" onclick="goToLsns(event)"/>
+							<input type="button" value="250" onclick="goToLsns(event)"/>
+						</li>
+						<li>yamara
+							<input type="button" value="83" onclick="goToLsns(event)"/>
+						</li>
+					</ol>
+				</li>
+				<li>Consonant change
+					<input type="button" value="14" onclick="goToLsns(event)"/>
+					<input type="button" value="16Nt" onclick="goToLsns(event)"/>
+					<input type="button" value="21" onclick="goToLsns(event)"/>
+					<input type="button" value="22" onclick="goToLsns(event)"/>
+					<input type="button" value="40" onclick="goToLsns(event)"/>
+					<input type="button" value="41" onclick="goToLsns(event)"/>
+					<input type="button" value="117Nt" onclick="goToLsns(event)"/>
+					<input type="button" value="186Lst1" onclick="goToLsns(event)"/>
+					<input type="button" value="231" onclick="goToLsns(event)"/>
+				</li>
+				<li>Continuous past tense
+					<input type="button" value="114" onclick="goToLsns(event)"/>
+				</li>
+				<li>Continuous present tense
+					<input type="button" value="35" onclick="goToLsns(event)"/>
+					<input type="button" value="70" onclick="goToLsns(event)"/>
+				</li>
+			</ol>
+		</section> <!-- end of secC  -->
+		<section id="secD" class="indxSec">D
+			<ol type="1">
+				<li>Dates
+					<input type="button" value="126" onclick="goToLsns(event)"/>
+				</li>
+				<li>Days of the week
+					<input type="button" value="127" onclick="goToLsns(event)"/>
+					<input type="button" value="145" onclick="goToLsns(event)"/>
+				</li>
+				<li>Defective verbs
+					<ol type="a">
+						<li>-fise
+							<input type="button" value="36" onclick="goToLsns(event)"/>
+							<input type="button" value="58" onclick="goToLsns(event)"/>
+							<input type="button" value="171" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ri
+							<input type="button" value="19" onclick="goToLsns(event)"/>
+							<input type="button" value="29" onclick="goToLsns(event)"/>
+							<input type="button" value="114" onclick="goToLsns(event)"/>
+							<input type="button" value="115" onclick="goToLsns(event)"/>
+							<input type="button" value="185" onclick="goToLsns(event)"/>
+							<input type="button" value="187" onclick="goToLsns(event)"/>
+						</li>
+						<li>-zi
+							<input type="button" value="96" onclick="goToLsns(event)"/>
+							<input type="button" value="97" onclick="goToLsns(event)"/>
+							<input type="button" value="98" onclick="goToLsns(event)"/>
+						</li>
+					</ol>
+				</li>
+				<li>Demonstrative adjectives
+					<input type="button" value="172" onclick="goToLsns(event)"/>
+					<input type="button" value="173" onclick="goToLsns(event)"/>
+					<input type="button" value="174" onclick="goToLsns(event)"/>
+					<input type="button" value="175" onclick="goToLsns(event)"/>
+					<input type="button" value="176" onclick="goToLsns(event)"/>
+					<input type="button" value="177" onclick="goToLsns(event)"/>
+					<input type="button" value="178" onclick="goToLsns(event)"/>
+					<input type="button" value="179" onclick="goToLsns(event)"/>
+					<input type="button" value="180" onclick="goToLsns(event)"/>
+				</li>
+				<li>Demonstrative pronouns
+					<input type="button" value="190" onclick="goToLsns(event)"/>
+					<input type="button" value="195" onclick="goToLsns(event)"/>
+				</li>
+				<li>Dependent clauses
+					<ol type="a">
+						<li>far past in
+							<input type="button" value="142Lst3" onclick="goToLsns(event)"/>
+						</li>
+						<li>immediate past in
+							<input type="button" value="152" onclick="goToLsns(event)"/>
+						</li>
+						<li>kuko introducing
+							<input type="button" value="53Nt" onclick="goToLsns(event)"/>
+						</li>
+						<li>narrative in
+							<input type="button" value="254Lst1" onclick="goToLsns(event)"/>
+						</li>
+						<li>negative in
+							<input type="button" value="186" onclick="goToLsns(event)"/>
+							<input type="button" value="187" onclick="goToLsns(event)"/>
+						</li>
+						<li>not-yet tense in
+							<input type="button" value="188" onclick="goToLsns(event)"/>
+							<input type="button" value="189" onclick="goToLsns(event)"/>
+						</li>
+						<li>nta in
+							<input type="button" value="188" onclick="goToLsns(event)"/>
+							<input type="button" value="189" onclick="goToLsns(event)"/>
+						</li>
+						<li>prefixless present in
+							<input type="button" value="142Lst3" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ra present not used in
+							<input type="button" value="152" onclick="goToLsns(event)"/>
+						</li>
+						<li>-raca- in
+							<input type="button" value="53Nt" onclick="goToLsns(event)"/>
+						</li>
+						<li>relative clauses
+							<input type="button" value="192" onclick="goToLsns(event)"/>
+							<input type="button" value="193" onclick="goToLsns(event)"/>
+							<input type="button" value="194" onclick="goToLsns(event)"/>
+							<input type="button" value="195" onclick="goToLsns(event)"/>
+							<input type="button" value="196" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ri in
+							<input type="button" value="185" onclick="goToLsns(event)"/>
+						</li>
+						<li>tenses used in
+							<input type="button" value="184" onclick="goToLsns(event)"/>
+						</li>							
+					</ol>
+				</li>
+				<li>Descriptive adjectives (see under adj.)
+				</li>
+				<li>Diminutive
+					<input type="button" value="48" onclick="goToLsns(event)"/>
+					<input type="button" value="49" onclick="goToLsns(event)"/>
+				</li>
+			</ol>
+		</section> <!-- end of secD	-->
+		<section id="secE" class="indxSec">E,F,G
+			<ol type="1" >
+				<li>"each"
+					<input type="button" value="227" onclick="goToLsns(event)"/>
+				</li>
+				<li>"each other"
+					<input type="button" value="216" onclick="goToLsns(event)"/>
+					<input type="button" value="217" onclick="goToLsns(event)"/>
+					<input type="button" value="218" onclick="goToLsns(event)"/>
+				</li>
+				<li>Elision
+					<input type="button" value="4" onclick="goToLsns(event)"/>
+					<input type="button" value="12Nt" onclick="goToLsns(event)"/>
+					<input type="button" value="19" onclick="goToLsns(event)"/>
+					<input type="button" value="53Nt" onclick="goToLsns(event)"/>
+				</li>
+				<li>Far past tense
+					<input type="button" value="142" onclick="goToLsns(event)"/>
+					<input type="button" value="143" onclick="goToLsns(event)"/>
+					<input type="button" value="252" onclick="goToLsns(event)"/>
+				</li>
+				<li>"father"
+					<input type="button" value="147" onclick="goToLsns(event)"/>
+				</li>
+				<li>-fise
+					<input type="button" value="36" onclick="goToLsns(event)"/>
+					<input type="button" value="58" onclick="goToLsns(event)"/>
+					<input type="button" value="171" onclick="goToLsns(event)"/>
+				</li>
+				<li>Future tense
+					<input type="button" value="57" onclick="goToLsns(event)"/>
+					<input type="button" value="60" onclick="goToLsns(event)"/>
+					<input type="button" value="72" onclick="goToLsns(event)"/>
+					<input type="button" value="73" onclick="goToLsns(event)"/>
+					<input type="button" value="120Lst2" onclick="goToLsns(event)"/>
+					<input type="button" value="252" onclick="goToLsns(event)"/>
+				</li>
+				<li>-garuka
+					<input type="button" value="59" onclick="goToLsns(event)"/>
+				</li>
+				<li>-genda
+					<input type="button" value="204" onclick="goToLsns(event)"/>
+				</li>
+				<li>(umu)genzi
+					<input type="button" value="93" onclick="goToLsns(event)"/>
+				</li>
+				<li>-gira
+					<input type="button" value="36" onclick="goToLsns(event)"/>
+					<input type="button" value="58" onclick="goToLsns(event)"/>
+				</li>
+				<li>-gira ngo
+					<input type="button" value="135Nt" onclick="goToLsns(event)"/>
+					<input type="button" value="186Lst4" onclick="goToLsns(event)"/>
+				</li>
+				<li>"go"
+					<input type="button" value="205" onclick="goToLsns(event)"/>
+				</li>
+				<li>-gora
+					<input type="button" value="118" onclick="goToLsns(event)"/>
+				</li>
+				<li>gurtya, gurtyo
+					<input type="button" value="163" onclick="goToLsns(event)"/>
+				</li>
+			</ol>
+		</section> <!-- end of secE,F,G	-->
+		<section id="secH" class="indxSec">H
+			<ol type="1">
+				<li>ha- prefix
+					<input type="button" value="67" onclick="goToLsns(event)"/>
+				</li>
+				<li>-ha
+					<input type="button" value="118Nt1" onclick="goToLsns(event)"/>
+					<input type="button" value="159Nt" onclick="goToLsns(event)"/>
+					<input type="button" value="171" onclick="goToLsns(event)"/>
+				</li>
+				<li>-habga
+					<input type="button" value="171" onclick="goToLsns(event)"/>
+				</li>
+				<li>Habitual action
+					<input type="button" value="27Lst4" onclick="goToLsns(event)"/>
+					<input type="button" value="240Lst2" onclick="goToLsns(event)"/>
+					<input type="button" value="254Lst3" onclick="goToLsns(event)"/>
+				</li>
+				<li>-hagarara
+					<input type="button" value="136" onclick="goToLsns(event)"/>
+				</li>
+				<li>-hamagara
+					<input type="button" value="166" onclick="goToLsns(event)"/>
+				</li>
+				<li>(imi)hana
+					<input type="button" value="les92VocNt1" onclick="goToLsns(event)"/>
+				</li>
+				<li>-he?
+					<input type="button" value="99" onclick="goToLsns(event)"/>
+					<input type="button" value="198" onclick="goToLsns(event)"/>
+					<input type="button" value="199" onclick="goToLsns(event)"/>
+				</li>
+				<li>(igi)he
+					<input type="button" value="182" onclick="goToLsns(event)"/>
+					<input type="button" value="202Lst2" onclick="goToLsns(event)"/>
+				</li>
+				<li>-hesha
+					<input type="button" value="159Nt" onclick="goToLsns(event)"/>
+				</li>
+				<li>hirya y'ejo
+					<input type="button" value="145" onclick="goToLsns(event)"/>
+				</li>
+				<li>-ho
+					<input type="button" value="67Nt" onclick="goToLsns(event)"/>
+					<input type="button" value="138" onclick="goToLsns(event)"/>
+					<input type="button" value="233" onclick="goToLsns(event)"/>
+				</li>
+				<li>Hours
+					<input type="button" value="128" onclick="goToLsns(event)"/>
+				</li>
+				<li>Household terms
+					<input type="button" value="Les63" onclick="goToLsns(event)"/>
+				</li>
+				<li>"how?"
+					<input type="button" value="223" onclick="goToLsns(event)"/>
+				</li>
+				<li>"hos many?"
+					<input type="button" value="81" onclick="goToLsns(event)"/>
+					<input type="button" value="99" onclick="goToLsns(event)"/>
+					<input type="button" value="100Lst3" onclick="goToLsns(event)"/>
+				</li>
+				<li>-hwera
+					<input type="button" value="146" onclick="goToLsns(event)"/>
+				</li>
+			</ol>
+		</section> <!-- end of secH  -->
+		<section id="secI" class="indxSec">I
+			<ol type="1">
+				<li>i preposition
+					<input type="button" value="18" onclick="goToLsns(event)"/>
+				</li>
+				<li>-iba
+					<input type="button" value="121Nt" onclick="goToLsns(event)"/>
+				</li>
+				<li>"if"
+					<input type="button" value="Les111VocNt" onclick="goToLsns(event)"/>
+				</li>
+				<li>Immediate past tense
+					<input type="button" value="150" onclick="goToLsns(event)"/>
+					<input type="button" value="151" onclick="goToLsns(event)"/>
+					<input type="button" value="152" onclick="goToLsns(event)"/>
+					<input type="button" value="252" onclick="goToLsns(event)"/>
+				</li>
+				<li>Imperative
+					<ol type="a">
+						<li>"come"
+							<input type="button" value="56" onclick="goToLsns(event)"/>
+						</li>
+						<li>negative
+							<input type="button" value="137" onclick="goToLsns(event)"/>
+						</li>
+						<li>plural
+							<input type="button" value="132" onclick="goToLsns(event)"/>
+						</li>
+						<li>reflexive
+							<input type="button" value="209" onclick="goToLsns(event)"/>
+						</li>	
+						<li>singular
+							<input type="button" value="38" onclick="goToLsns(event)"/>
+						</li>
+						<li>subjunctive
+							<input type="button" value="134" onclick="goToLsns(event)"/>
+						</li>
+						<li>third person, etc.
+							<input type="button" value="135" onclick="goToLsns(event)"/>
+						</li>
+						<li>vowel-stems
+							<input type="button" value="91" onclick="goToLsns(event)"/>
+						</li>
+						<li>with gurtya, gurtyo
+							<input type="button" value="163" onclick="goToLsns(event)"/>
+						</li>
+						<li>with -ka-
+							<input type="button" value="240Lst3" onclick="goToLsns(event)"/>
+						</li>	
+						<li>with nta co
+							<input type="button" value="214" onclick="goToLsns(event)"/>
+						</li>
+						<li>with object pronouns
+							<input type="button" value="133" onclick="goToLsns(event)"/>
+						</li>		
+					</ol>
+				</li>
+				<li>Impersonal expressions
+					<input type="button" value="25" onclick="goToLsns(event)"/>
+					<input type="button" value="55" onclick="goToLsns(event)"/>
+					<input type="button" value="67Lst2b" onclick="goToLsns(event)"/>
+				</li>
+				<li>Infinitive
+					<input type="button" value="37" onclick="goToLsns(event)"/>
+					<input type="button" value="131" onclick="goToLsns(event)"/>
+					<ol type="a">
+						<li>as noun
+							<input type="button" value="63" onclick="goToLsns(event)"/>
+							<input type="button" value="64" onclick="goToLsns(event)"/>
+						</li>	
+					</ol>
+				</li>
+				<li>-ita
+					<input type="button" value="166" onclick="goToLsns(event)"/>
+				</li>
+				<li>i wanje, etc.
+					<input type="button" value="18" onclick="goToLsns(event)"/>
+				</li>
+			</ol>
+		</section> <!-- end of secI -->
+		<section id="secJ" class="indxSec">J, K, L, M
+			<ol type="1">
+				<li>-ja
+					<input type="button" value="204" onclick="goToLsns(event)"/>
+				</li>
+				<li>-jana
+					<input type="button" value="Les50VocNt" onclick="goToLsns(event)"/>
+					<input type="button" value="220" onclick="goToLsns(event)"/>
+				</li>
+				<li>Ka tense
+					<input type="button" value="240" onclick="goToLsns(event)"/>
+					<input type="button" value="252" onclick="goToLsns(event)"/>
+				</li>
+				<li>-kanguka, -kangura
+					<input type="button" value="Les89VocNt2" onclick="goToLsns(event)"/>
+				</li>
+				<li>-kena
+					<input type="button" value="Les91VocNt" onclick="goToLsns(event)"/>
+ 				</li>
+				<li>-ki
+					<input type="button" value="99" onclick="goToLsns(event)"/>
+					<input type="button" value="237" onclick="goToLsns(event)"/>
+					<input type="button" value="239" onclick="goToLsns(event)"/>
+				</li>
+				<li>-ki- tense
+					<input type="button" value="243" onclick="goToLsns(event)"/>
+					<input type="button" value="252" onclick="goToLsns(event)"/>
+				</li>
+				<li>"kind"
+					<input type="button" value="237" onclick="goToLsns(event)"/>
+					<input type="button" value="238" onclick="goToLsns(event)"/>
+					<input type="button" value="239" onclick="goToLsns(event)"/>
+				</li>
+				<li>"know"
+					<input type="button" value="96" onclick="goToLsns(event)"/>
+					<input type="button" value="97" onclick="goToLsns(event)"/>
+					<input type="button" value="98" onclick="goToLsns(event)"/>
+				</li>
+				<li>ku
+					<input type="button" value="10" onclick="goToLsns(event)"/>
+					<ol type="a">
+						<li>after kuva
+							<input type="button" value="10" onclick="goToLsns(event)"/>
+							<input type="button" value="113" onclick="goToLsns(event)"/>
+						</li>	
+						<li>change to kuri
+							<input type="button" value="104" onclick="goToLsns(event)"/>
+							<input type="button" value="176" onclick="goToLsns(event)"/>
+						</li>	
+						<li>change to kw
+							<input type="button" value="32" onclick="goToLsns(event)"/>
+						</li>
+					</ol>
+ 				</li>
+				<li>kubga
+					<input type="button" value="207" onclick="goToLsns(event)"/>
+				</li>
+				<li>kuko
+					<input type="button" value="53Nt" onclick="goToLsns(event)"/>
+					<input type="button" value="185" onclick="goToLsns(event)"/>
+				</li>
+				<li>-kwiye
+					<input type="button" value="191" onclick="goToLsns(event)"/>
+				</li>
+				<li>"last"
+					<input type="button" value="123" onclick="goToLsns(event)"/>
+ 				</li>
+				<li>"like"
+					<input type="button" value="250" onclick="goToLsns(event)"/>
+					<input type="button" value="251" onclick="goToLsns(event)"/>
+				</li>
+				<li>"like this (that)"
+					<input type="button" value="163" onclick="goToLsns(event)"/>
+				</li>
+				<li>mboga
+					<input type="button" value="6" onclick="goToLsns(event)"/>
+ 				</li>
+ 				<li>Monosyllabic verbs
+ 					<ol type="a">
+						<li>causative
+							<input type="button" value="159Lst3" onclick="goToLsns(event)"/>
+						</li>	
+						<li>passive
+							<input type="button" value="169" onclick="goToLsns(event)"/>
+							<input type="button" value="170" onclick="goToLsns(event)"/>
+						</li>	
+						<li>past
+							<input type="button" value="111Nt" onclick="goToLsns(event)"/>
+						</li>	
+						<li>prepositional
+							<input type="button" value="203" onclick="goToLsns(event)"/>
+						</li>
+ 					</ol>
+ 				</li>
+				<li>"mother"
+					<input type="button" value="147" onclick="goToLsns(event)"/>
+				</li>
+				<li>Months
+					<input type="button" value="126" onclick="goToLsns(event)"/>
+ 				</li>
+ 				<li>mu
+					<input type="button" value="10" onclick="goToLsns(event)"/>
+ 					<ol type="a">
+						<li>after kuva
+							<input type="button" value="10" onclick="goToLsns(event)"/>
+ 							<input type="button" value="113" onclick="goToLsns(event)"/>
+						</li>	
+						<li>change to muri
+							<input type="button" value="104" onclick="goToLsns(event)"/>
+							<input type="button" value="176" onclick="goToLsns(event)"/>
+						</li>	
+						<li>change to mw
+							<input type="button" value="32" onclick="goToLsns(event)"/>
+						</li>
+ 					</ol>
+ 				</li>
+				<li>mugabo
+					<input type="button" value="83" onclick="goToLsns(event)"/>
+				</li>
+				<li>"must"
+					<input type="button" value="191" onclick="goToLsns(event)"/>
+ 				</li>
+				<li>-mwe
+					<input type="button" value="226" onclick="goToLsns(event)"/>
+					<input type="button" value="227" onclick="goToLsns(event)"/>
+ 				</li>
+			</ol>
+		</section> <!-- end of secJ,K,L,M -->
+		<section id="secN" class="indxSec">N
+			<ol type="1">
+ 				<li>na
+					<input type="button" value="8" onclick="goToLsns(event)"/>
+					<input type="button" value="139" onclick="goToLsns(event)"/>
+					<input type="button" value="165" onclick="goToLsns(event)"/>
+					<input type="button" value="211" onclick="goToLsns(event)"/>
+					<input type="button" value="250" onclick="goToLsns(event)"/>
+					<ol type="a">
+						<li>changed to no
+							<input type="button" value="139" onclick="goToLsns(event)"/>
+						</li>	
+ 					</ol>
+ 				</li>
+				<li>naka
+					<input type="button" value="205" onclick="goToLsns(event)"/>
+				</li>
+				<li>namba
+					<input type="button" value="Les111VocNt" onclick="goToLsns(event)"/>
+ 				</li>
+				<li>Narrative tense
+					<input type="button" value="240" onclick="goToLsns(event)"/>
+					<input type="button" value="253" onclick="goToLsns(event)"/>
+					<input type="button" value="254" onclick="goToLsns(event)"/>
+				</li>
+				<li>nde?
+					<input type="button" value="197" onclick="goToLsns(event)"/>
+ 				</li>
+				<li>-ndi
+					<input type="button" value="92" onclick="goToLsns(event)"/>
+					<input type="button" value="99" onclick="goToLsns(event)"/>
+					<input type="button" value="100Lst2" onclick="goToLsns(event)"/>
+				</li>
+				<li>Negative of verbs
+					<ol type="a">
+						<li>continuous present
+							<input type="button" value="35" onclick="goToLsns(event)"/>
+						</li>
+						<li>dependent
+							<input type="button" value="186" onclick="goToLsns(event)"/>
+						</li>
+						<li>dependent of -ri
+							<input type="button" value="187" onclick="goToLsns(event)"/>
+						</li>
+						<li>far future
+							<input type="button" value="60" onclick="goToLsns(event)"/>
+						</li>	
+						<li>far future vowel-stems
+							<input type="button" value="73" onclick="goToLsns(event)"/>
+							<input type="button" value="120Lst2" onclick="goToLsns(event)"/>
+						</li>
+						<li>far past
+							<input type="button" value="143" onclick="goToLsns(event)"/>
+						</li>
+						<li>immediate past
+							<input type="button" value="152" onclick="goToLsns(event)"/>
+						</li>
+						<li>imperative
+							<input type="button" value="137" onclick="goToLsns(event)"/>
+							<input type="button" value="214" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ke- (-raca-)
+							<input type="button" value="243" onclick="goToLsns(event)"/>
+						</li>
+						<li>narrative
+							<input type="button" value="254Lst4" onclick="goToLsns(event)"/>
+						</li>	
+						<li>ordinary past
+							<input type="button" value="112" onclick="goToLsns(event)"/>
+						</li>
+						<li>present
+							<input type="button" value="28" onclick="goToLsns(event)"/>
+							<input type="button" value="44" onclick="goToLsns(event)"/>
+							<input type="button" value="74" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ri present
+							<input type="button" value="29" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ri ordinary past
+							<input type="button" value="115" onclick="goToLsns(event)"/>
+						</li>
+						<li>subjunctive
+							<input type="button" value="137" onclick="goToLsns(event)"/>
+						</li>
+						<li>summary
+							<input type="button" value="252" onclick="goToLsns(event)"/>
+						</li>	
+						<li>why with negaive
+							<input type="button" value="225Lst3" onclick="goToLsns(event)"/>
+						</li>		
+					</ol>
+ 				</li>
+				<li>"never"
+					<input type="button" value="214" onclick="goToLsns(event)"/>
+ 				</li>
+				<li>-ngahe?
+					<input type="button" value="81" onclick="goToLsns(event)"/>
+					<input type="button" value="99" onclick="goToLsns(event)"/>
+					<input type="button" value="100Lst3" onclick="goToLsns(event)"/>
+				</li>
+				<li>ni and si
+					<input type="button" value="4" onclick="goToLsns(event)"/>
+					<input type="button" value="19" onclick="goToLsns(event)"/>
+ 				</li>
+				<li>nka
+					<input type="button" value="250" onclick="goToLsns(event)"/>
+					<input type="button" value="251" onclick="goToLsns(event)"/>
+				</li>
+				<li>"no longer"
+					<input type="button" value="243" onclick="goToLsns(event)"/>
+ 				</li>
+				<li>"no one"
+					<input type="button" value="211" onclick="goToLsns(event)"/>
+					<input type="button" value="212" onclick="goToLsns(event)"/>
+				</li>
+				<li>Not-yet tense
+					<input type="button" value="183" onclick="goToLsns(event)"/>
+					<input type="button" value="184" onclick="goToLsns(event)"/>
+					<input type="button" value="188" onclick="goToLsns(event)"/>
+					<input type="button" value="189" onclick="goToLsns(event)"/>
+					<input type="button" value="214" onclick="goToLsns(event)"/>
+					<input type="button" value="252" onclick="goToLsns(event)"/>
+				</li>
+				<li>Nouns used to express adjectives
+					<input type="button" value="246" onclick="goToLsns(event)"/>
+					<input type="button" value="247" onclick="goToLsns(event)"/>
+				</li>
+				<li>nta
+					<input type="button" value="210" onclick="goToLsns(event)"/>
+					<input type="button" value="211" onclick="goToLsns(event)"/>
+					<input type="button" value="212" onclick="goToLsns(event)"/>
+					<input type="button" value="213" onclick="goToLsns(event)"/>
+					<input type="button" value="214" onclick="goToLsns(event)"/>
+					<input type="button" value="215" onclick="goToLsns(event)"/>
+				</li>
+				<li>ntuze
+					<input type="button" value="206" onclick="goToLsns(event)"/>
+ 				</li>
+				<li>Numbers
+					<ol type="a">
+						<li>Cardinal
+							<input type="button" value="75" onclick="goToLsns(event)"/>
+							<input type="button" value="76" onclick="goToLsns(event)"/>
+							<input type="button" value="77" onclick="goToLsns(event)"/>
+							<input type="button" value="78" onclick="goToLsns(event)"/>
+							<input type="button" value="79" onclick="goToLsns(event)"/>
+							<input type="button" value="80" onclick="goToLsns(event)"/>
+							<input type="button" value="99" onclick="goToLsns(event)"/>
+							<input type="button" value="100Lst6" onclick="goToLsns(event)"/>
+						</li>
+						<li>Ordinal
+							<input type="button" value="122" onclick="goToLsns(event)"/>
+						</li>							
+					</ol>
+				</li>
+				<li>Numeral Adverb
+					<input type="button" value="124" onclick="goToLsns(event)"/>
+ 				</li>
+				<li>-nyene
+					<input type="button" value="248" onclick="goToLsns(event)"/>
+ 				</li>
+ 			</ol>
+		</section><!-- end of secJ,K,L,M -->
+		<section id="secO" class="indxSec">O
+			<ol type="1">
+				<li>Objects (see also Object Pronouns)
+					<ol type="a">
+						<li>direct and indirectr, order
+							<input type="button" value="159Lst3" onclick="goToLsns(event)"/>
+						</li>
+						<li>in causatives
+							<input type="button" value="160" onclick="goToLsns(event)"/>
+							<input type="button" value="161" onclick="goToLsns(event)"/>
+							<input type="button" value="162" onclick="goToLsns(event)"/>
+						</li>
+						<li>in reflexives
+							<input type="button" value="208" onclick="goToLsns(event)"/>
+						</li>
+						<li>nta
+							<input type="button" value="213" onclick="goToLsns(event)"/>
+							<input type="button" value="214" onclick="goToLsns(event)"/>
+						</li>	
+						<li>personal pronouns
+							<input type="button" value="103" onclick="goToLsns(event)"/>
+						</li>
+						<li>reciprocals
+							<input type="button" value="217" onclick="goToLsns(event)"/>
+						</li>
+						<li>with -ra- and -ara- tenses
+							<input type="button" value="11" onclick="goToLsns(event)"/>
+							<input type="button" value="27Lst1" onclick="goToLsns(event)"/>
+							<input type="button" value="45" onclick="goToLsns(event)"/>
+							<input type="button" value="142" onclick="goToLsns(event)"/>
+							<input type="button" value="253" onclick="goToLsns(event)"/>
+						</li>		
+					</ol>
+				</li>
+				<li>Object pronouns
+					<input type="button" value="116" onclick="goToLsns(event)"/>
+					<input type="button" value="117" onclick="goToLsns(event)"/>
+					<input type="button" value="119" onclick="goToLsns(event)"/>
+					<input type="button" value="120" onclick="goToLsns(event)"/>
+					<input type="button" value="121" onclick="goToLsns(event)"/>
+					<input type="button" value="133" onclick="goToLsns(event)"/>
+					<input type="button" value="161" onclick="goToLsns(event)"/>
+					<input type="button" value="162" onclick="goToLsns(event)"/>
+					<input type="button" value="214" onclick="goToLsns(event)"/>
+				</li>
+				<li>-ompi
+					<input type="button" value="125" onclick="goToLsns(event)"/>
+ 				</li>
+				<li>Order of sentence
+					<ol type="a">
+						<li>adjectives
+							<input type="button" value="100" onclick="goToLsns(event)"/>
+						</li>
+						<li>adverbs
+							<input type="button" value="102" onclick="goToLsns(event)"/>
+						</li>
+						<li>demonstratives
+							<input type="button" value="176" onclick="goToLsns(event)"/>
+						</li>
+						<li>descriptive adjectives
+							<input type="button" value="15" onclick="goToLsns(event)"/>
+							<input type="button" value="100" onclick="goToLsns(event)"/>
+						</li>	
+						<li>-he
+							<input type="button" value="199" onclick="goToLsns(event)"/>
+						</li>
+						<li>-hehe?
+							<input type="button" value="19Nt" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ndi
+							<input type="button" value="92" onclick="goToLsns(event)"/>
+							<input type="button" value="100" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ngahe
+							<input type="button" value="81" onclick="goToLsns(event)"/>
+							<input type="button" value="100" onclick="goToLsns(event)"/>
+						</li>
+						<li>numbers
+							<input type="button" value="77" onclick="goToLsns(event)"/>
+							<input type="button" value="100" onclick="goToLsns(event)"/>
+						</li>
+						<li>objects, direct and indirect
+							<input type="button" value="144" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ose
+							<input type="button" value="86" onclick="goToLsns(event)"/>
+							<input type="button" value="100" onclick="goToLsns(event)"/>
+						</li>
+						<li>possessive adjective
+							<input type="button" value="5Nt" onclick="goToLsns(event)"/>
+							<input type="button" value="100" onclick="goToLsns(event)"/>
+						</li>	
+						<li>possessive particle
+							<input type="button" value="12" onclick="goToLsns(event)"/>
+						</li>	
+					</ol>
+				</li>
+				<li>Ordinal numerals
+					<input type="button" value="122" onclick="goToLsns(event)"/>
+				</li>
+				<li>Ordinary past
+					<input type="button" value="105" onclick="goToLsns(event)"/>
+					<input type="button" value="106" onclick="goToLsns(event)"/>
+					<input type="button" value="107" onclick="goToLsns(event)"/>
+					<input type="button" value="108" onclick="goToLsns(event)"/>
+					<input type="button" value="109" onclick="goToLsns(event)"/>
+					<input type="button" value="110" onclick="goToLsns(event)"/>
+					<input type="button" value="111" onclick="goToLsns(event)"/>
+					<input type="button" value="112" onclick="goToLsns(event)"/>
+					<input type="button" value="114" onclick="goToLsns(event)"/>
+					<input type="button" value="115" onclick="goToLsns(event)"/>
+					<input type="button" value="252" onclick="goToLsns(event)"/>
+					<ol type="a">
+						<li>of -ri
+							<input type="button" value="114" onclick="goToLsns(event)"/>
+							<input type="button" value="115" onclick="goToLsns(event)"/>
+						</li>	
+ 					</ol>
+				</li>
+				<li>Orthography
+					<input type="button" value="Rules" onclick="goToLsns(event)"/>
+				</li>
+				<li>-ose
+					<input type="button" value="84" onclick="goToLsns(event)"/>
+					<input type="button" value="85" onclick="goToLsns(event)"/>
+					<input type="button" value="86" onclick="goToLsns(event)"/>
+					<input type="button" value="87" onclick="goToLsns(event)"/>
+					<input type="button" value="99" onclick="goToLsns(event)"/>
+					<input type="button" value="100Lst5" onclick="goToLsns(event)"/>
+				</li>
+				<li>"other"
+					<input type="button" value="92" onclick="goToLsns(event)"/>
+					<input type="button" value="99" onclick="goToLsns(event)"/>
+					<input type="button" value="100Lst2" onclick="goToLsns(event)"/>
+				</li>
+				<li>"ought"
+					<input type="button" value="191" onclick="goToLsns(event)"/>
+				</li>
+			</ol>
+		</section><!-- end of sec O -->
+		<section id="secP" class="indxSec">P
+			<ol type="1">
+				<li>Particle, possessive
+					<input type="button" value="12" onclick="goToLsns(event)"/>
+					<input type="button" value="131" onclick="goToLsns(event)"/>
+					<input type="button" value="139" onclick="goToLsns(event)"/>
+					<input type="button" value="140" onclick="goToLsns(event)"/>
+					<input type="button" value="141" onclick="goToLsns(event)"/>
+					<input type="button" value="247" onclick="goToLsns(event)"/>
+				</li>
+				<li>Passive verbs
+					<input type="button" value="164" onclick="goToLsns(event)"/>
+					<input type="button" value="165" onclick="goToLsns(event)"/>
+					<input type="button" value="167" onclick="goToLsns(event)"/>
+					<input type="button" value="168" onclick="goToLsns(event)"/>
+					<input type="button" value="169" onclick="goToLsns(event)"/>
+					<input type="button" value="170" onclick="goToLsns(event)"/>
+					<input type="button" value="171" onclick="goToLsns(event)"/>
+				</li>
+				<li>Past tenses
+					<ol type="a">
+						<li>continuous past
+							<input type="button" value="114" onclick="goToLsns(event)"/>
+						</li>
+						<li>dependent negative
+							<input type="button" value="186Lst2" onclick="goToLsns(event)"/>
+						</li>
+						<li>far past
+							<input type="button" value="142" onclick="goToLsns(event)"/>
+							<input type="button" value="143" onclick="goToLsns(event)"/>
+							<input type="button" value="252" onclick="goToLsns(event)"/>
+						</li>
+						<li>immediate past
+							<input type="button" value="150" onclick="goToLsns(event)"/>
+							<input type="button" value="151" onclick="goToLsns(event)"/>
+							<input type="button" value="152" onclick="goToLsns(event)"/>
+							<input type="button" value="252" onclick="goToLsns(event)"/>
+						</li>
+						<li>ordinary past
+							<input type="button" value="105" onclick="goToLsns(event)"/>
+							<input type="button" value="106" onclick="goToLsns(event)"/>
+							<input type="button" value="107" onclick="goToLsns(event)"/>
+							<input type="button" value="108" onclick="goToLsns(event)"/>
+							<input type="button" value="109" onclick="goToLsns(event)"/>
+							<input type="button" value="110" onclick="goToLsns(event)"/>
+							<input type="button" value="111" onclick="goToLsns(event)"/>
+							<input type="button" value="112" onclick="goToLsns(event)"/>
+							<input type="button" value="114" onclick="goToLsns(event)"/>
+							<input type="button" value="115" onclick="goToLsns(event)"/>
+							<input type="button" value="252" onclick="goToLsns(event)"/>
+						</li>	
+						<li>of -ri
+							<input type="button" value="114" onclick="goToLsns(event)"/>
+							<input type="button" value="115" onclick="goToLsns(event)"/>
+						</li>
+						<li>of causatives
+							<input type="button" value="158" onclick="goToLsns(event)"/>
+						</li>
+						<li>of passives
+							<input type="button" value="167" onclick="goToLsns(event)"/>
+							<input type="button" value="168" onclick="goToLsns(event)"/>
+							<input type="button" value="169" onclick="goToLsns(event)"/>
+							</li>
+						<li>of prepositionals
+							<input type="button" value="201Nt" onclick="goToLsns(event)"/>
+						</li>
+						<li>of reciprocals
+							<input type="button" value="218" onclick="goToLsns(event)"/>
+						</li>
+					</ol>
+				</li>
+				<li>Past verb endings
+					<input type="button" value="107" onclick="goToLsns(event)"/>
+					<input type="button" value="110" onclick="goToLsns(event)"/>
+					<input type="button" value="111" onclick="goToLsns(event)"/>
+					<input type="button" value="118Lst2" onclick="goToLsns(event)"/>
+					<input type="button" value="218" onclick="goToLsns(event)"/>
+				</li>
+				<li>Personal pronouns
+					<input type="button" value="103" onclick="goToLsns(event)"/>
+					<input type="button" value="250" onclick="goToLsns(event)"/>
+ 				</li>
+				<li>-pfa
+					<input type="button" value="146" onclick="goToLsns(event)"/>
+				</li>
+				<li>Place idea
+					<input type="button" value="66" onclick="goToLsns(event)"/>
+					<input type="button" value="67" onclick="goToLsns(event)"/>
+ 				</li>
+				<li>Place, adverbs of
+					<input type="button" value="242" onclick="goToLsns(event)"/>
+				</li>
+				<li>Possessive adjectives
+					<input type="button" value="5" onclick="goToLsns(event)"/>
+					<input type="button" value="7" onclick="goToLsns(event)"/>
+					<input type="button" value="13" onclick="goToLsns(event)"/>
+					<input type="button" value="18" onclick="goToLsns(event)"/>
+					<input type="button" value="20" onclick="goToLsns(event)"/>
+					<input type="button" value="30" onclick="goToLsns(event)"/>
+					<input type="button" value="39" onclick="goToLsns(event)"/>
+					<input type="button" value="46" onclick="goToLsns(event)"/>
+					<input type="button" value="50" onclick="goToLsns(event)"/>
+					<input type="button" value="62" onclick="goToLsns(event)"/>
+					<input type="button" value="65" onclick="goToLsns(event)"/>
+					<input type="button" value="68" onclick="goToLsns(event)"/>
+					<input type="button" value="99" onclick="goToLsns(event)"/>
+					<input type="button" value="100Lst1" onclick="goToLsns(event)"/>
+					<input type="button" value="153" onclick="goToLsns(event)"/>
+					<input type="button" value="154" onclick="goToLsns(event)"/>
+					<input type="button" value="155" onclick="goToLsns(event)"/>
+ 				</li>
+				<li>Possessive particle
+					<input type="button" value="12" onclick="goToLsns(event)"/>
+					<input type="button" value="68" onclick="goToLsns(event)"/>
+					<input type="button" value="131" onclick="goToLsns(event)"/>
+					<input type="button" value="139" onclick="goToLsns(event)"/>
+					<input type="button" value="140" onclick="goToLsns(event)"/>
+					<input type="button" value="141" onclick="goToLsns(event)"/>
+					<input type="button" value="197Lst4" onclick="goToLsns(event)"/>
+					<input type="button" value="247" onclick="goToLsns(event)"/>
+				</li>
+				<li>Possessive with infinitive
+					<input type="button" value="131" onclick="goToLsns(event)"/>
+					<input type="button" value="139" onclick="goToLsns(event)"/>
+				</li>
+				<li>Prefixes, verb
+					<input type="button" value="19" onclick="goToLsns(event)"/>
+					<input type="button" value="20" onclick="goToLsns(event)"/>
+					<input type="button" value="26" onclick="goToLsns(event)"/>
+					<input type="button" value="30" onclick="goToLsns(event)"/>
+					<input type="button" value="39" onclick="goToLsns(event)"/>
+					<input type="button" value="46" onclick="goToLsns(event)"/>
+					<input type="button" value="50" onclick="goToLsns(event)"/>
+					<input type="button" value="62" onclick="goToLsns(event)"/>
+					<input type="button" value="65" onclick="goToLsns(event)"/>
+					<input type="button" value="68" onclick="goToLsns(event)"/>
+					<input type="button" value="108" onclick="goToLsns(event)"/>
+				</li>
+				<li>Prefixless present tense
+					<input type="button" value="44" onclick="goToLsns(event)"/>
+					<input type="button" value="45" onclick="goToLsns(event)"/>
+					<input type="button" value="70" onclick="goToLsns(event)"/>
+					<input type="button" value="74" onclick="goToLsns(event)"/>
+					<input type="button" value="252" onclick="goToLsns(event)"/>
+					<input type="button" value="253" onclick="goToLsns(event)"/>
+				</li>
+				<li>Prepositional form of verb
+					<input type="button" value="200" onclick="goToLsns(event)"/>
+					<input type="button" value="201" onclick="goToLsns(event)"/>
+					<input type="button" value="202" onclick="goToLsns(event)"/>
+					<input type="button" value="203" onclick="goToLsns(event)"/>
+					<input type="button" value="218Nt" onclick="goToLsns(event)"/>
+					<input type="button" value="225Lst4" onclick="goToLsns(event)"/>
+ 				</li>
+				<li>Prepositional suffixes
+					<input type="button" value="67Nt" onclick="goToLsns(event)"/>
+					<input type="button" value="138" onclick="goToLsns(event)"/>
+					<input type="button" value="233" onclick="goToLsns(event)"/>
+					<input type="button" value="234" onclick="goToLsns(event)"/>
+					<input type="button" value="235" onclick="goToLsns(event)"/>
+					<input type="button" value="236" onclick="goToLsns(event)"/>
+				</li>
+				<li>Prepositions: 
+					<ol type="a">
+						<li>mu, ku
+							<input type="button" value="10" onclick="goToLsns(event)"/>
+							<input type="button" value="32" onclick="goToLsns(event)"/>
+							<input type="button" value="104" onclick="goToLsns(event)"/>
+						</li>
+						<li>i
+							<input type="button" value="18" onclick="goToLsns(event)"/>
+		 				</li>
+					</ol>
+				</li>
+				<li>Present tense 
+					<ol type="a">
+						<li>continuous
+							<input type="button" value="35" onclick="goToLsns(event)"/>
+							<input type="button" value="70" onclick="goToLsns(event)"/>
+						</li>
+						<li>prefixless
+							<input type="button" value="44" onclick="goToLsns(event)"/>
+							<input type="button" value="45" onclick="goToLsns(event)"/>
+							<input type="button" value="70" onclick="goToLsns(event)"/>
+							<input type="button" value="74" onclick="goToLsns(event)"/>
+							<input type="button" value="253" onclick="goToLsns(event)"/>
+		 				</li>
+						<li>-ra-
+							<input type="button" value="11" onclick="goToLsns(event)"/>
+							<input type="button" value="26" onclick="goToLsns(event)"/>
+							<input type="button" value="27" onclick="goToLsns(event)"/>
+							<input type="button" value="28" onclick="goToLsns(event)"/>
+							<input type="button" value="70" onclick="goToLsns(event)"/>
+							<input type="button" value="74" onclick="goToLsns(event)"/>
+		 				</li>
+						<li>-raca-
+							<input type="button" value="243" onclick="goToLsns(event)"/>
+						</li>
+					</ol>
+				<li>Pronouns 
+					<ol type="a">
+						<li>demonstrative
+							<input type="button" value="190" onclick="goToLsns(event)"/>
+							<input type="button" value="195" onclick="goToLsns(event)"/>
+						</li>
+						<li>object
+							<input type="button" value="116" onclick="goToLsns(event)"/>
+							<input type="button" value="117" onclick="goToLsns(event)"/>
+							<input type="button" value="119" onclick="goToLsns(event)"/>
+							<input type="button" value="120" onclick="goToLsns(event)"/>
+							<input type="button" value="121" onclick="goToLsns(event)"/>
+							<input type="button" value="133" onclick="goToLsns(event)"/>
+							<input type="button" value="161" onclick="goToLsns(event)"/>
+							<input type="button" value="162" onclick="goToLsns(event)"/>
+		 				</li>
+						<li>personal
+							<input type="button" value="103" onclick="goToLsns(event)"/>
+							<input type="button" value="250" onclick="goToLsns(event)"/>
+		 				</li>
+						<li>possessive
+							<input type="button" value="197Lst4" onclick="goToLsns(event)"/>
+						</li>
+						<li>relative
+							<input type="button" value="192" onclick="goToLsns(event)"/>
+							<input type="button" value="193" onclick="goToLsns(event)"/>
+							<input type="button" value="194" onclick="goToLsns(event)"/>
+							<input type="button" value="195" onclick="goToLsns(event)"/>
+							<input type="button" value="196" onclick="goToLsns(event)"/>
+							<input type="button" value="210Lst2" onclick="goToLsns(event)"/>
+		 				</li>
+					</ol>
+				</li>
+			</ol>
+		</section><!-- end of secP -->
+		<section id="secQ" class="indxSec">Q, R
+			<ol type="1">
+				<li>Quantity
+					<input type="button" value="101" onclick="goToLsns(event)"/>
+				</li>
+				<li>Questions
+					<input type="button" value="6" onclick="goToLsns(event)"/>
+					<input type="button" value="27Lst2" onclick="goToLsns(event)"/>
+					<input type="button" value="45Lst1" onclick="goToLsns(event)"/>
+				</li>
+				<li>Quotations, direct
+					<input type="button" value="231" onclick="goToLsns(event)"/>
+					<input type="button" value="232" onclick="goToLsns(event)"/>
+					<input type="button" value="254Lst2" onclick="goToLsns(event)"/>
+				</li>
+				<li>Quotations, indirect
+					<input type="button" value="232" onclick="goToLsns(event)"/>
+				</li>
+				<li>-ra- present tense
+					<input type="button" value="11" onclick="goToLsns(event)"/>
+					<input type="button" value="26" onclick="goToLsns(event)"/>
+					<input type="button" value="27" onclick="goToLsns(event)"/>
+					<input type="button" value="28" onclick="goToLsns(event)"/>
+					<input type="button" value="70" onclick="goToLsns(event)"/>
+					<input type="button" value="74" onclick="goToLsns(event)"/>
+					<input type="button" value="252" onclick="goToLsns(event)"/>
+					<input type="button" value="253" onclick="goToLsns(event)"/>
+				</li>
+				<li>-raca- tense
+					<input type="button" value="243" onclick="goToLsns(event)"/>
+					<input type="button" value="252" onclick="goToLsns(event)"/>
+				</li>
+				<li>Reciprocal form of verb
+					<input type="button" value="216" onclick="goToLsns(event)"/>
+					<input type="button" value="218" onclick="goToLsns(event)"/>
+				</li>
+				<li>Reduplicated verbs
+					<input type="button" value="230" onclick="goToLsns(event)"/>
+				</li>
+				<li>Reflexive verbs
+					<input type="button" value="207" onclick="goToLsns(event)"/>
+					<input type="button" value="208" onclick="goToLsns(event)"/>
+					<input type="button" value="209" onclick="goToLsns(event)"/>
+				</li>
+				<li>-reka
+					<input type="button" value="136" onclick="goToLsns(event)"/>
+				</li>
+				<li>Relative clauses
+					<input type="button" value="192" onclick="goToLsns(event)"/>
+					<input type="button" value="193" onclick="goToLsns(event)"/>
+					<input type="button" value="194" onclick="goToLsns(event)"/>
+					<input type="button" value="195" onclick="goToLsns(event)"/>
+					<input type="button" value="196" onclick="goToLsns(event)"/>
+					<input type="button" value="210Lst2" onclick="goToLsns(event)"/>
+				</li>
+				<li>-remera (rwa)
+					<input type="button" value="168Nt" onclick="goToLsns(event)"/>
+				</li>
+				<li>"return"
+					<input type="button" value="59" onclick="goToLsns(event)"/>
+				</li>
+				<li>-ri 
+					<ol type="a">
+						<li>after kuko, etc.
+							<input type="button" value="185" onclick="goToLsns(event)"/>
+						</li>
+						<li>dpendent negative
+							<input type="button" value="187" onclick="goToLsns(event)"/>
+		 				</li>
+						<li>past
+							<input type="button" value="114" onclick="goToLsns(event)"/>
+		 				</li>
+						<li>past negative
+							<input type="button" value="115" onclick="goToLsns(event)"/>
+						</li>
+						<li>present
+							<input type="button" value="19" onclick="goToLsns(event)"/>
+		 				</li>
+						<li>present negative
+							<input type="button" value="29" onclick="goToLsns(event)"/>
+		 				</li>
+						<li>-rimwo
+							<input type="button" value="236" onclick="goToLsns(event)"/>
+						</li>
+					</ol>
+				</li>
+				<li>-rinda
+					<input type="button" value="191" onclick="goToLsns(event)"/>
+				</li>
+				<li>-rorera
+					<input type="button" value="136" onclick="goToLsns(event)"/>
+				</li>
+				<li>-rungika
+					<input type="button" value="82" onclick="goToLsns(event)"/>
+				</li>
+				<li>(umu)ryango
+					<input type="button" value="Les98VocNt" onclick="goToLsns(event)"/>
+				</li>
+				<li>ryari
+					<input type="button" value="88" onclick="goToLsns(event)"/>
+				</li>
+			</ol>
+		</section><!-- end of sec secQ,R -->
+		<section id="secS" class="indxSec">S
+			<ol type="1">
+				<li>-sa
+					<input type="button" value="251" onclick="goToLsns(event)"/>
+				</li>
+				<li>-saba
+					<input type="button" value="95" onclick="goToLsns(event)"/>
+				</li>
+				<li>"self"
+					<input type="button" value="248" onclick="goToLsns(event)"/>
+					<input type="button" value="249" onclick="goToLsns(event)"/>
+				</li>
+				<li>"send"
+					<input type="button" value="82" onclick="goToLsns(event)"/>
+				</li>
+				<li>Sentence order (see Order of sentence)
+				</li>
+				<li>-sha
+					<input type="button" value="Les92VocNt2" onclick="goToLsns(event)"/>
+				</li>
+				<li>(uru)shi
+					<input type="button" value="42" onclick="goToLsns(event)"/>
+				</li>
+				<li>si
+					<input type="button" value="4" onclick="goToLsns(event)"/>
+					<input type="button" value="19" onclick="goToLsns(event)"/>
+				</li>
+				<li>"sister"
+					<input type="button" value="148" onclick="goToLsns(event)"/>
+					<input type="button" value="149" onclick="goToLsns(event)"/>
+				</li>
+				<li>Size (in reference to nouns)
+					<input type="button" value="24" onclick="goToLsns(event)"/>
+				</li>
+				<li>"so-and-so"
+					<input type="button" value="205" onclick="goToLsns(event)"/>
+				</li>
+				<li>"some"
+					<input type="button" value="226" onclick="goToLsns(event)"/>
+					<input type="button" value="227" onclick="goToLsns(event)"/>
+				</li>
+				<li>-soroma
+					<input type="button" value="Les89VocNt1" onclick="goToLsns(event)"/>
+				</li>
+				<li>Stative voice
+					<input type="button" value="130" onclick="goToLsns(event)"/>
+					<input type="button" value="146" onclick="goToLsns(event)"/>
+					<input type="button" value="168Nt" onclick="goToLsns(event)"/>
+					<input type="button" value="Les92VocNt2" onclick="goToLsns(event)"/>
+					<input type="button" value="229" onclick="goToLsns(event)"/>
+					<input type="button" value="Les122VocNt1" onclick="goToLsns(event)"/>
+				</li>
+				<li>"still"
+					<input type="button" value="243" onclick="goToLsns(event)"/>
+				</li>
+				<li>"stop"
+					<input type="button" value="136" onclick="goToLsns(event)"/>
+				</li>
+				<li>-subira
+					<input type="button" value="59" onclick="goToLsns(event)"/>
+					<input type="button" value="94" onclick="goToLsns(event)"/>
+				</li>
+				<li>Subjunctive
+					<input type="button" value="134" onclick="goToLsns(event)"/>
+					<input type="button" value="135" onclick="goToLsns(event)"/>
+				</li>
+				<li>Subjunctive, negative
+					<input type="button" value="137" onclick="goToLsns(event)"/>
+				</li>
+				<li>Suffix -ho
+					<input type="button" value="67Nt" onclick="goToLsns(event)"/>
+					<input type="button" value="138" onclick="goToLsns(event)"/>
+					<input type="button" value="233" onclick="goToLsns(event)"/>
+				</li>
+				<li>Suffixes, prepositional (others, see Verbs)
+					<input type="button" value="67Nt" onclick="goToLsns(event)"/>
+					<input type="button" value="138" onclick="goToLsns(event)"/>
+					<input type="button" value="233" onclick="goToLsns(event)"/>
+					<input type="button" value="234" onclick="goToLsns(event)"/>
+					<input type="button" value="235" onclick="goToLsns(event)"/>
+					<input type="button" value="236" onclick="goToLsns(event)"/>
+				</li>				
+			</ol>
+		</section><!-- end of sec indxS -->
+		<section id="secT" class="indxSec">T, U
+			<ol type="1">
+				<li>-te?
+					<input type="button" value="223" onclick="goToLsns(event)"/>
+				</li>
+				<li>Temporal expressions
+					<input type="button" value="55" onclick="goToLsns(event)"/>
+				</li>
+				<li>Tenses of verbs: Summary
+					<input type="button" value="252" onclick="goToLsns(event)"/>
+					<ol type="a">
+						<li>Continuous past
+							<input type="button" value="114" onclick="goToLsns(event)"/>
+						</li>
+						<li>Continuous present
+							<input type="button" value="35" onclick="goToLsns(event)"/>
+							<input type="button" value="70" onclick="goToLsns(event)"/>
+						</li>
+						<li>Far past
+							<input type="button" value="142" onclick="goToLsns(event)"/>
+							<input type="button" value="143" onclick="goToLsns(event)"/>
+						</li>
+						<li>Future
+							<input type="button" value="57" onclick="goToLsns(event)"/>
+							<input type="button" value="60" onclick="goToLsns(event)"/>
+							<input type="button" value="72" onclick="goToLsns(event)"/>
+							<input type="button" value="73" onclick="goToLsns(event)"/>
+							<input type="button" value="120Lst2" onclick="goToLsns(event)"/>
+						</li>	
+						<li>Immediate past
+							<input type="button" value="150" onclick="goToLsns(event)"/>
+							<input type="button" value="151" onclick="goToLsns(event)"/>
+							<input type="button" value="152" onclick="goToLsns(event)"/>
+						</li>
+						<li>Ka tense
+							<input type="button" value="239" onclick="goToLsns(event)"/>
+						</li>
+						<li>Narrative tenses
+							<input type="button" value="252" onclick="goToLsns(event)"/>
+							<input type="button" value="253" onclick="goToLsns(event)"/>
+						</li>
+						<li>Not-yet tense
+							<input type="button" value="183" onclick="goToLsns(event)"/>
+							<input type="button" value="188" onclick="goToLsns(event)"/>
+							<input type="button" value="189" onclick="goToLsns(event)"/>
+						</li>
+						<li>Ordinary past
+							<input type="button" value="105" onclick="goToLsns(event)"/>
+							<input type="button" value="106" onclick="goToLsns(event)"/>
+							<input type="button" value="107" onclick="goToLsns(event)"/>
+							<input type="button" value="108" onclick="goToLsns(event)"/>
+							<input type="button" value="109" onclick="goToLsns(event)"/>
+							<input type="button" value="110" onclick="goToLsns(event)"/>
+							<input type="button" value="111" onclick="goToLsns(event)"/>
+							<input type="button" value="112" onclick="goToLsns(event)"/>
+							<input type="button" value="114" onclick="goToLsns(event)"/>
+							<input type="button" value="115" onclick="goToLsns(event)"/>
+						</li>
+						<li>Prefixless present
+							<input type="button" value="44" onclick="goToLsns(event)"/>
+							<input type="button" value="45" onclick="goToLsns(event)"/>
+							<input type="button" value="70" onclick="goToLsns(event)"/>
+							<input type="button" value="74" onclick="goToLsns(event)"/>
+							<input type="button" value="253" onclick="goToLsns(event)"/>
+						</li>
+						<li>-ra present
+							<input type="button" value="11" onclick="goToLsns(event)"/>
+							<input type="button" value="26" onclick="goToLsns(event)"/>
+							<input type="button" value="27" onclick="goToLsns(event)"/>
+							<input type="button" value="28" onclick="goToLsns(event)"/>
+							<input type="button" value="70" onclick="goToLsns(event)"/>
+							<input type="button" value="74" onclick="goToLsns(event)"/>
+							<input type="button" value="253" onclick="goToLsns(event)"/>
+						</li>
+						<li>-raca
+							<input type="button" value="243" onclick="goToLsns(event)"/>
+						</li>	
+					</ol>
+				</li>
+				<li>-tera
+					<input type="button" value="222" onclick="goToLsns(event)"/>
+				</li>
+				<li>Thing class
+					<input type="button" value="25" onclick="goToLsns(event)"/>
+				</li>
+				<li>Time (hour of day)
+					<input type="button" value="128" onclick="goToLsns(event)"/>
+				</li>
+				<li>"time"
+					<input type="button" value="182" onclick="goToLsns(event)"/>
+					<input type="button" value="202Lst2" onclick="goToLsns(event)"/>
+				</li>
+				<li>"together"
+					<input type="button" value="219" onclick="goToLsns(event)"/>
+					<input type="button" value="220" onclick="goToLsns(event)"/>
+					<input type="button" value="221" onclick="goToLsns(event)"/>
+				</li>
+				<li>-tuma
+					<input type="button" value="82" onclick="goToLsns(event)"/>
+				</li>
+				<li>ubganje, etc.
+					<input type="button" value="249" onclick="goToLsns(event)"/>
+				</li>
+				<li>umuki (see -ki)
+				</li>
+				<li>-umva
+					<input type="button" value="83Nt" onclick="goToLsns(event)"/>
+				</li>
+			</ol>
+		</section><!-- end of sec indxT,U -->
+		<section id="secV" class="indxSec">V, W, Y, Z
+			<ol type="1">
+				<li>-va
+					<input type="button" value="10" onclick="goToLsns(event)"/>
+					<input type="button" value="113" onclick="goToLsns(event)"/>
+					<input type="button" value="136" onclick="goToLsns(event)"/>
+				</li>
+				<li>Verbs (see also: Tenses of Prefixes, Verb)
+					<ol type="a">
+						<li>associative
+							<input type="button" value="219" onclick="goToLsns(event)"/>
+							<input type="button" value="220" onclick="goToLsns(event)"/>
+							<input type="button" value="221" onclick="goToLsns(event)"/>
+						</li>
+						<li>causative
+							<input type="button" value="156" onclick="goToLsns(event)"/>
+							<input type="button" value="157" onclick="goToLsns(event)"/>
+							<input type="button" value="158" onclick="goToLsns(event)"/>
+							<input type="button" value="159" onclick="goToLsns(event)"/>
+							<input type="button" value="160" onclick="goToLsns(event)"/>
+							<input type="button" value="161" onclick="goToLsns(event)"/>
+							<input type="button" value="162" onclick="goToLsns(event)"/>
+						</li>
+						<li>defective
+							<input type="button" value="19" onclick="goToLsns(event)"/>
+							<input type="button" value="29" onclick="goToLsns(event)"/>
+							<input type="button" value="36" onclick="goToLsns(event)"/>
+							<input type="button" value="58" onclick="goToLsns(event)"/>
+							<input type="button" value="96" onclick="goToLsns(event)"/>
+							<input type="button" value="97" onclick="goToLsns(event)"/>
+							<input type="button" value="98" onclick="goToLsns(event)"/>
+							<input type="button" value="114" onclick="goToLsns(event)"/>
+							<input type="button" value="115" onclick="goToLsns(event)"/>
+							<input type="button" value="171" onclick="goToLsns(event)"/>
+							<input type="button" value="185" onclick="goToLsns(event)"/>
+							<input type="button" value="187" onclick="goToLsns(event)"/>
+						</li>	
+						<li>imperatives (see: Imperatives)
+						</li>
+						<li>infinitive (see: Infinitive)
+						</li>
+						<li>passive
+							<input type="button" value="164" onclick="goToLsns(event)"/>
+							<input type="button" value="165" onclick="goToLsns(event)"/>
+							<input type="button" value="167" onclick="goToLsns(event)"/>
+							<input type="button" value="168" onclick="goToLsns(event)"/>
+							<input type="button" value="169" onclick="goToLsns(event)"/>
+							<input type="button" value="170" onclick="goToLsns(event)"/>
+							<input type="button" value="171" onclick="goToLsns(event)"/>
+						</li>
+						<li>prepositional
+							<input type="button" value="200" onclick="goToLsns(event)"/>
+							<input type="button" value="201" onclick="goToLsns(event)"/>
+							<input type="button" value="202" onclick="goToLsns(event)"/>
+							<input type="button" value="203" onclick="goToLsns(event)"/>
+						</li>
+						<li>reciprocal
+							<input type="button" value="216" onclick="goToLsns(event)"/>
+							<input type="button" value="217" onclick="goToLsns(event)"/>
+							<input type="button" value="218" onclick="goToLsns(event)"/>
+						</li>
+						<li>reduplicated
+							<input type="button" value="229" onclick="goToLsns(event)"/>
+						</li>
+						<li>reflexive>
+							<input type="button" value="207" onclick="goToLsns(event)"/>
+							<input type="button" value="208" onclick="goToLsns(event)"/>
+							<input type="button" value="209" onclick="goToLsns(event)"/>
+						</li>
+						<li>vowel-stem (see: Vowel-Stem verbs)
+						</li>
+					</ol>
+				</li>
+				<li>Voice, stative (see: Stative voice)
+				</li>
+				<li>Vowel changes
+					<input type="button" value="3" onclick="goToLsns(event)"/>
+					<input type="button" value="9" onclick="goToLsns(event)"/>
+					<input type="button" value="16" onclick="goToLsns(event)"/>
+					<input type="button" value="28Nt" onclick="goToLsns(event)"/>
+					<input type="button" value="30" onclick="goToLsns(event)"/>
+					<input type="button" value="53Nt" onclick="goToLsns(event)"/>
+					<input type="button" value="71" onclick="goToLsns(event)"/>
+					<input type="button" value="120" onclick="goToLsns(event)"/>
+				</li>
+				<li>Vowel-stem verbs
+					<ol type="a">
+						<li>dependent negative
+							<input type="button" value="186Lst3" onclick="goToLsns(event)"/>
+						</li>
+						<li>far future
+							<input type="button" value="72" onclick="goToLsns(event)"/>
+							<input type="button" value="73" onclick="goToLsns(event)"/>
+						</li>
+						<li>far past
+							<input type="button" value="142" onclick="goToLsns(event)"/>
+						</li>
+						<li>imperative
+							<input type="button" value="91" onclick="goToLsns(event)"/>
+						</li>	
+						<li>not-yet tense
+							<input type="button" value="183" onclick="goToLsns(event)"/>
+						</li>
+						<li>ordinary past
+							<input type="button" value="109" onclick="goToLsns(event)"/>
+						</li>
+						<li>present
+							<input type="button" value="69" onclick="goToLsns(event)"/>
+							<input type="button" value="70" onclick="goToLsns(event)"/>
+							<input type="button" value="71" onclick="goToLsns(event)"/>
+						</li>
+						<li>present negative
+							<input type="button" value="74" onclick="goToLsns(event)"/>
+						</li>
+						<li>summary
+							<input type="button" value="252" onclick="goToLsns(event)"/>
+						</li>
+						<li>with object pronouns
+							<input type="button" value="120" onclick="goToLsns(event)"/>
+						</li>	
+						<li>with reflexive
+							<input type="button" value="207" onclick="goToLsns(event)"/>
+						</li>	
+					</ol>
+				</li>
+				<li>-vuna
+					<input type="button" value="Les122VocNt2" onclick="goToLsns(event)"/>
+				</li>
+				<li>"wash"
+					<input type="button" value="89" onclick="goToLsns(event)"/>
+					<input type="button" value="90" onclick="goToLsns(event)"/>
+				</li>
+				<li>"what kind?"
+					<input type="button" value="237" onclick="goToLsns(event)"/>
+					<input type="button" value="238" onclick="goToLsns(event)"/>
+					<input type="button" value="239" onclick="goToLsns(event)"/>
+				</li>
+				<li>"what's-his-name"
+					<input type="button" value="206" onclick="goToLsns(event)"/>
+				</li>
+				<li>"when"
+					<input type="button" value="88" onclick="goToLsns(event)"/>
+				</li>
+				<li>"which"
+					<input type="button" value="99" onclick="goToLsns(event)"/>
+					<input type="button" value="198" onclick="goToLsns(event)"/>
+					<input type="button" value="199" onclick="goToLsns(event)"/>
+					<ol type="a">
+						<li>as relative
+							<input type="button" value="192" onclick="goToLsns(event)"/>
+							<input type="button" value="193" onclick="goToLsns(event)"/>
+							<input type="button" value="194" onclick="goToLsns(event)"/>
+							<input type="button" value="195" onclick="goToLsns(event)"/>
+							<input type="button" value="196" onclick="goToLsns(event)"/>
+						</li>	
+					</ol>
+				</li>
+				<li>"while"
+					<input type="button" value="243" onclick="goToLsns(event)"/>
+				</li>
+				<li>"who?"
+					<input type="button" value="197" onclick="goToLsns(event)"/>
+					<ol type="a">
+						<li>as relative
+							<input type="button" value="192" onclick="goToLsns(event)"/>
+							<input type="button" value="193" onclick="goToLsns(event)"/>
+							<input type="button" value="194" onclick="goToLsns(event)"/>
+							<input type="button" value="195" onclick="goToLsns(event)"/>
+							<input type="button" value="196" onclick="goToLsns(event)"/>
+						</li>	
+					</ol>
+				</li>
+				<li>"why?"
+					<input type="button" value="225" onclick="goToLsns(event)"/>
+				</li>
+				<li>"would"
+					<input type="button" value="228" onclick="goToLsns(event)"/>
+				</li>
+				<li>yamara
+					<input type="button" value="83" onclick="goToLsns(event)"/>
+				</li>
+				<li>-za (imperative)
+					<input type="button" value="56" onclick="goToLsns(event)"/>
+				</li>
+				<li>-zi
+					<input type="button" value="96" onclick="goToLsns(event)"/>
+					<input type="button" value="97" onclick="goToLsns(event)"/>
+					<input type="button" value="98" onclick="goToLsns(event)"/>
+				</li>
+			</ol>
+		</section><!-- end of sec indxV,W,Y,Z -->
+	</section> <!-- end of section with class = index	-->
+</body>
+</html>	
