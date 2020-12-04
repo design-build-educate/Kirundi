@@ -1,0 +1,18 @@
+var lsn9 = '<section class="section"><h3>LESSON 9: Adjectives (continued)</h3><p>Vocabulary: (Memorize the last half of the list of adjectives in Lesson 8.)</p>';
+lsn9 +=	'<p>16. Vowel changes.</p><p>(a) Though in par. 3 we stated that a before another vowel drops out,'; 
+lsn9 +=	'there are exceptions to this rule. In the adjectives -iza and -inshi, when an a precedes the i,the two contract into e, thus:</p>';
+lsn9 +=	'<tr style="margin-left: 50px"><td>ba-iza becomes beza</td><td style="width: 50px"> </td><td>ba-inshi becomes benshi</td>';
+lsn9 +=	'</tr><p>(b) Remember that as stated in Par. 3, u before another vowel becomes w, thus: mu-iza becomes mwiza.</p>';
+lsn9 += '<p>(c) Also remember that i often (not always) becomes y before another vowel,thus: mi-iza becomes myiza, and mi-inshi becoaes myinshi.</p>';
+lsn9 +=	'<p>Note I. In par. 14 we said that n before a vowel becomes nz, thus: n-iza becomes nziza; however, the adjective -inshi is an exception, for n-inshi becomes nyinshi.</p>';
+lsn9 +=	'<table style="margin-left: 50px"><tr><td style="width: 80px">Class 1</td><td style="width: 115px">mwiza</td><td>beza</td></tr>';
+lsn9 +=	'<tr><td> </td><td> </td><td>benshi</td></tr><tr><td>Class 2</td><td>mwiza</td><td>myiza</td></tr><tr><td> </td><td>mwinshi</td><td>nziza</td></tr>';
+lsn9 +=	'<tr><td>Class 3</td><td>nziza</td><td>nziza</td></tr><tr><td> </td><td>nyinshi</td><td>nyinshi</td></tr></table>';
+lsn9 +=	'<p>Note II. The adjective -nini in agreeing with the 3rd class does not get an extra n. It is simply like the stem: inka nini - a big cow.</p><p>Note III. The adjectives -nini and -to may be reduplicated in the plural forms:'; 
+lsn9 +=	'abahungu banini-banini - big boys and abana bato-bato - little children.</p><p>Exercises:</p><p>I. Translate into English:</p>';
+lsn9 +=	'<ol><li>Inka ziwe ni nyinshi.</li><li>Afise umwana mwiza.</li><li>Umukobga wiwe n\'umuhungu wiwe ni batoya.</li><li>Inzu zabo nini ni nziza cane.</li>';
+lsn9 +=	'<li>Abana bato si babi.</li><li>Unugabo muremure akora mu ndimiro y\'umwigisha.</li><li>Mfise intebe nziza nshasha.</li><li>Umuhungu mutoya afise umunyu mwinshi.</li>';
+lsn9 +=	'<li>Mbeg\' abigishwa bafise impuzu nziza?</li><li>Mbeg\' inka z\'umutama ni nini?</li></ol><p>II. Translate into Kirundi:</p>';
+lsn9 +=	'<ol><li>My good dog is very short.</li><li>Your (pl.) large houses are nice.</li><li>Our small chairs are new.</li><li>Our great God is good.</li>';
+lsn9 +=	'<li>Your (pl.) many people work hard.</li><li>A tall man is walking in the garden.</li><li>The good children are not few.</li><li>The teacher has many gardens.</li>';
+lsn9 +=	'<li>His long string is nice.</li><li>Our God is living.</li></ol></section> <!-- end of chap section -->';
